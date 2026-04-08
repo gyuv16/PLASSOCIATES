@@ -3,354 +3,765 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>P.L. & Associates – Chartered Accountants, Chennai</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>P.L. &amp; Associates — Chartered Accountants, Chennai</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy: #0d2240;
-  --navy-mid: #163259;
-  --gold: #b8923a;
-  --gold-light: #d4a84b;
-  --gold-pale: #f5edd8;
-  --white: #ffffff;
-  --off-white: #fafaf8;
-  --light-bg: #f4f2ee;
-  --text: #1a1a1a;
-  --text-mid: #4a4a4a;
-  --text-muted: #7a7a7a;
-  --border: #e2ddd4;
-  --border-strong: #c8c0b4;
+
+/* ── ROOT ───────────────────────────────────────── */
+:root{
+  --navy:   #0b1f3a;
+  --navy2:  #0f2b50;
+  --gold:   #b07d2e;
+  --gold2:  #c99035;
+  --gold3:  #f2dfa0;
+  --white:  #ffffff;
+  --off:    #f9f7f3;
+  --stone:  #f0ece3;
+  --border: #ddd5c6;
+  --border2:#c4b99e;
+  --ink:    #1a1a1a;
+  --ink2:   #3d3d3d;
+  --ink3:   #6b6b6b;
+  --serif:  'Playfair Display',Georgia,serif;
+  --sans:   'Lato',Arial,sans-serif;
 }
+
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
-::-webkit-scrollbar{width:5px;}
-::-webkit-scrollbar-track{background:#f0ede8;}
+body{
+  font-family:var(--sans);
+  background:var(--white);
+  color:var(--ink);
+  font-size:20px;        /* senior-friendly base */
+  line-height:1.8;
+  overflow-x:hidden;
+}
+::-webkit-scrollbar{width:6px;}
 ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 56px;height:72px;display:flex;align-items:center;justify-content:space-between;}
-.nav-brand{display:flex;align-items:center;gap:14px;}
-.nav-seal{width:42px;height:42px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--gold);letter-spacing:-1px;}
-.nav-name strong{display:block;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--navy);line-height:1.2;}
-.nav-name span{font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;font-weight:400;}
-.nav-menu{display:flex;gap:36px;align-items:center;}
-.nav-menu a{text-decoration:none;font-size:13px;color:var(--text-mid);letter-spacing:0.3px;transition:color .25s;font-weight:400;}
-.nav-menu a:hover{color:var(--navy);}
-.nav-btn{background:var(--navy);color:#fff;padding:10px 24px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:500;transition:all .3s;}
-.nav-btn:hover{background:var(--gold);}
+img{display:block;max-width:100%;}
 
-#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:var(--off-white);position:relative;overflow:hidden;padding-top:72px;}
-.hero-left{padding:100px 64px 80px 56px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border);}
-.hero-right{background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:80px 56px;position:relative;overflow:hidden;}
-.hero-right::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 80% 20%,rgba(184,146,58,.08) 0%,transparent 60%);}
-.hero-right-inner{position:relative;z-index:1;}
-.est-badge{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:32px;}
-.est-badge::before,.est-badge::after{content:'';width:24px;height:1px;background:var(--gold);}
-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,6vw,84px);font-weight:600;line-height:1.0;color:var(--navy);margin-bottom:8px;}
-h1 em{font-style:italic;color:var(--gold);}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2vw,26px);font-weight:300;letter-spacing:4px;color:var(--text-mid);text-transform:uppercase;margin-bottom:32px;}
-.hero-rule{width:72px;height:2px;background:linear-gradient(to right,var(--gold),transparent);margin-bottom:28px;}
-.hero-desc{font-size:15.5px;line-height:1.85;color:var(--text-mid);max-width:480px;margin-bottom:48px;font-weight:300;}
-.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
-.btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#fff;padding:15px 32px;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;text-decoration:none;transition:all .3s;font-family:'Outfit',sans-serif;}
-.btn-gold:hover{background:var(--navy);transform:translateY(-2px);box-shadow:0 8px 28px rgba(13,34,64,.18);}
-.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--navy);color:var(--navy);padding:15px 32px;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;text-decoration:none;transition:all .3s;font-family:'Outfit',sans-serif;}
-.btn-outline:hover{background:var(--navy);color:#fff;}
-.hero-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid rgba(255,255,255,.12);margin-bottom:40px;}
-.hstat{padding:24px 20px;background:rgba(255,255,255,.04);text-align:center;}
-.hstat-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;color:var(--gold);line-height:1;}
-.hstat-lbl{font-size:10.5px;letter-spacing:1.5px;color:rgba(255,255,255,.45);text-transform:uppercase;margin-top:6px;}
-.hero-cards{display:grid;gap:1px;}
-.hcard{padding:22px 24px;border:1px solid rgba(255,255,255,.1);display:flex;gap:16px;align-items:flex-start;transition:border-color .3s;cursor:default;}
-.hcard:hover{border-color:rgba(184,146,58,.5);}
-.hcard-icon{font-size:20px;line-height:1;flex-shrink:0;margin-top:2px;}
-.hcard h4{font-size:13.5px;color:#fff;font-weight:500;margin-bottom:4px;}
-.hcard p{font-size:12px;color:rgba(255,255,255,.45);line-height:1.6;}
+/* ── UTILITY ─────────────────────────────────────── */
+.u-tag{
+  display:inline-block;
+  font-family:var(--sans);font-size:12px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;color:var(--gold);
+  margin-bottom:16px;
+}
+.u-h2{
+  font-family:var(--serif);
+  font-size:clamp(38px,4vw,58px);font-weight:700;
+  color:var(--navy);line-height:1.1;margin-bottom:20px;
+}
+.u-h2 i{font-style:italic;color:var(--gold);}
+.u-rule{width:60px;height:3px;background:var(--gold);margin-bottom:28px;}
+.u-lead{font-size:20px;line-height:1.85;color:var(--ink2);font-weight:300;}
+.u-center{text-align:center;}
+.u-center .u-rule{margin-left:auto;margin-right:auto;}
 
-section{padding:96px 56px;}
-.sec-tag{display:block;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:14px;}
-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:600;line-height:1.15;color:var(--navy);margin-bottom:16px;}
-h2 span{color:var(--gold);}
-.sec-rule{width:56px;height:2px;background:linear-gradient(to right,var(--gold),var(--border));margin-bottom:28px;}
-.sec-desc{font-size:15px;color:var(--text-muted);line-height:1.8;font-weight:300;}
-.center{text-align:center;}
-.center .sec-rule{margin:0 auto 28px;}
+/* ── NAVBAR ──────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  height:84px;
+  background:rgba(255,255,255,0.98);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;
+  box-shadow:0 2px 24px rgba(0,0,0,0.06);
+}
 
-#about{background:var(--white);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;max-width:1300px;margin:0 auto;}
-.vision-block{background:var(--navy);padding:52px 44px;position:relative;}
-.vision-block::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:120px;color:var(--gold);opacity:.15;position:absolute;top:-20px;left:28px;line-height:1;}
-.vision-block h3{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;font-weight:400;}
-.vision-block p{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,.85);line-height:1.75;font-style:italic;margin-bottom:28px;}
-.mission-strip{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;}
-.mission-strip h4{font-size:10.5px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
-.mission-strip p{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.75;font-weight:300;}
-.about-right h2{margin-top:0;}
-.about-para{font-size:14.5px;color:var(--text-mid);line-height:1.9;margin-bottom:20px;font-weight:300;}
-.proprietrix-card{display:flex;gap:22px;padding:28px;border:1px solid var(--border);background:var(--off-white);margin:32px 0;}
-.pr-avatar{width:62px;height:62px;min-width:62px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--gold);}
-.pr-info h4{font-size:16px;color:var(--navy);font-weight:600;margin-bottom:3px;}
-.pr-info .role{font-size:11px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;display:block;}
-.pr-info p{font-size:13px;color:var(--text-muted);line-height:1.7;}
-.cert-chips{display:flex;flex-wrap:wrap;gap:9px;}
-.chip{padding:5px 16px;font-size:11.5px;color:var(--navy);border:1px solid var(--border-strong);letter-spacing:.5px;background:var(--white);}
+/* CA India Logo SVG — accurate recreation */
+.ca-logo svg{display:block;}
 
-#services{background:var(--light-bg);}
-.services-header{max-width:600px;margin:0 auto 56px;text-align:center;}
-.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);max-width:1300px;margin:0 auto;}
-.srv-card{padding:44px 36px;background:var(--white);border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:all .35s;cursor:default;position:relative;}
-.srv-card:hover{background:var(--navy);z-index:1;box-shadow:0 16px 48px rgba(13,34,64,.18);}
-.srv-num{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:20px;display:block;font-weight:400;}
-.srv-icon{font-size:28px;margin-bottom:18px;display:block;}
-.srv-card h3{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.2;transition:color .35s;}
-.srv-card:hover h3{color:#fff;}
-.srv-card p{font-size:13px;color:var(--text-muted);line-height:1.75;margin-bottom:20px;transition:color .35s;}
-.srv-card:hover p{color:rgba(255,255,255,.55);}
+.nav-sep{width:1px;height:48px;background:var(--border2);margin:0 22px;}
+.nav-brand-text{}
+.nav-brand-text strong{
+  display:block;font-family:var(--serif);
+  font-size:20px;font-weight:700;color:var(--navy);
+  letter-spacing:0.2px;line-height:1.15;
+}
+.nav-brand-text span{
+  font-family:var(--sans);font-size:11px;font-weight:700;
+  letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;
+}
+.nav-left{display:flex;align-items:center;}
+.nav-links{display:flex;gap:36px;}
+.nav-links a{
+  font-family:var(--sans);font-size:15px;font-weight:700;
+  color:var(--ink2);text-decoration:none;letter-spacing:0.3px;
+  transition:color .25s;
+}
+.nav-links a:hover{color:var(--navy);}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--navy);color:#fff;
+  padding:13px 28px;
+  font-family:var(--sans);font-size:13px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;transition:background .3s;
+  white-space:nowrap;margin-left:36px;
+}
+.nav-cta:hover{background:var(--gold);}
+
+/* ── HERO ────────────────────────────────────────── */
+#hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:52% 48%;
+  padding-top:84px;
+}
+.hero-l{
+  padding:100px 80px 80px 60px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--white);
+  border-right:1px solid var(--border);
+}
+.hero-r{
+  background:var(--navy);
+  padding:70px 56px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.hero-r::after{
+  content:'';
+  position:absolute;bottom:-80px;right:-80px;
+  width:400px;height:400px;border-radius:50%;
+  border:1px solid rgba(176,125,46,.15);
+  pointer-events:none;
+}
+.hero-est{
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:var(--sans);font-size:12px;font-weight:700;
+  letter-spacing:3px;color:var(--gold);text-transform:uppercase;
+  margin-bottom:30px;
+}
+.hero-est::before,.hero-est::after{content:'';width:30px;height:1px;background:var(--gold);}
+.hero-h1{
+  font-family:var(--serif);
+  font-size:clamp(60px,7vw,96px);
+  font-weight:800;line-height:0.92;
+  color:var(--navy);margin-bottom:16px;
+}
+.hero-h1 i{font-style:italic;color:var(--gold);}
+.hero-sub{
+  font-family:var(--serif);
+  font-size:clamp(20px,2vw,28px);
+  font-weight:500;font-style:italic;
+  letter-spacing:4px;color:var(--ink3);
+  text-transform:uppercase;margin-bottom:30px;
+}
+.hero-rule{width:80px;height:3px;background:var(--gold);margin-bottom:32px;}
+.hero-p{
+  font-size:21px;line-height:1.85;color:var(--ink2);
+  max-width:520px;margin-bottom:52px;font-weight:300;
+}
+.hero-btns{display:flex;gap:18px;flex-wrap:wrap;}
+.btn-a{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--gold);color:#fff;
+  padding:18px 38px;
+  font-family:var(--sans);font-size:15px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;transition:all .3s;
+}
+.btn-a:hover{background:var(--navy);transform:translateY(-3px);box-shadow:0 10px 30px rgba(11,31,58,.2);}
+.btn-b{
+  display:inline-flex;align-items:center;gap:12px;
+  border:2px solid var(--navy);color:var(--navy);
+  padding:18px 38px;
+  font-family:var(--sans);font-size:15px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;transition:all .3s;
+}
+.btn-b:hover{background:var(--navy);color:#fff;}
+
+/* hero right panel */
+.stat-row{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border:1px solid rgba(255,255,255,.1);
+  margin-bottom:36px;
+}
+.stat-c{padding:28px 18px;background:rgba(255,255,255,.04);text-align:center;border-right:1px solid rgba(255,255,255,.08);}
+.stat-c:last-child{border-right:none;}
+.stat-n{
+  font-family:var(--serif);font-size:56px;font-weight:700;
+  color:var(--gold2);line-height:1;
+}
+.stat-l{
+  font-family:var(--sans);font-size:11px;font-weight:700;
+  letter-spacing:1.5px;color:rgba(255,255,255,.4);
+  text-transform:uppercase;margin-top:8px;
+}
+.feat-rows{display:flex;flex-direction:column;gap:0;}
+.feat-row{
+  display:flex;align-items:flex-start;gap:20px;
+  padding:22px 24px;
+  border:1px solid rgba(255,255,255,.08);
+  margin-top:-1px;
+  transition:border-color .3s;
+}
+.feat-row:hover{border-color:rgba(176,125,46,.4);}
+.feat-ico{flex-shrink:0;margin-top:3px;}
+.feat-text h4{
+  font-family:var(--sans);font-size:16px;font-weight:700;
+  color:#fff;margin-bottom:4px;
+}
+.feat-text p{
+  font-family:var(--sans);font-size:14px;font-weight:300;
+  color:rgba(255,255,255,.45);line-height:1.55;
+}
+
+/* ── ABOUT ───────────────────────────────────────── */
+#about{background:var(--white);padding:110px 60px;}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:100px;align-items:start;max-width:1300px;margin:0 auto;
+}
+.vision-panel{background:var(--navy);padding:60px 52px;position:relative;}
+.vision-panel::before{
+  content:'\201C';
+  font-family:var(--serif);font-size:160px;
+  color:var(--gold);opacity:.1;
+  position:absolute;top:-32px;left:32px;line-height:1;
+  pointer-events:none;
+}
+.vp-tag{
+  font-family:var(--sans);font-size:11px;font-weight:700;
+  letter-spacing:3px;color:var(--gold);text-transform:uppercase;
+  display:block;margin-bottom:22px;
+}
+.vp-quote{
+  font-family:var(--serif);font-size:22px;font-style:italic;
+  color:rgba(255,255,255,.88);line-height:1.75;margin-bottom:34px;
+}
+.vp-mission{border-top:1px solid rgba(255,255,255,.1);padding-top:28px;}
+.vp-mission h4{
+  font-family:var(--sans);font-size:11px;font-weight:700;
+  letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;
+}
+.vp-mission p{
+  font-family:var(--sans);font-size:16px;font-weight:300;
+  color:rgba(255,255,255,.5);line-height:1.85;
+}
+
+.about-copy .u-lead{margin-bottom:22px;}
+.pr-box{
+  display:flex;gap:24px;align-items:flex-start;
+  padding:32px;border:1px solid var(--border);
+  background:var(--off);margin:36px 0;
+}
+.pr-av{
+  width:72px;height:72px;min-width:72px;border-radius:50%;
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:28px;font-weight:700;color:var(--gold);
+}
+.pr-info h4{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.pr-info em{
+  display:block;font-family:var(--sans);font-size:12px;font-weight:700;
+  letter-spacing:2px;color:var(--gold);text-transform:uppercase;
+  margin-bottom:12px;font-style:normal;
+}
+.pr-info p{font-family:var(--sans);font-size:17px;color:var(--ink3);line-height:1.75;font-weight:300;}
+.cert-row{display:flex;flex-wrap:wrap;gap:10px;}
+.cert{
+  padding:8px 20px;border:1px solid var(--border2);
+  font-family:var(--sans);font-size:14px;font-weight:700;
+  color:var(--navy);letter-spacing:.3px;background:var(--white);
+}
+
+/* ── SERVICES ────────────────────────────────────── */
+#services{background:var(--stone);padding:110px 0;}
+.srv-header{text-align:center;padding:0 60px;margin-bottom:72px;}
+.srv-header .u-lead{max-width:680px;margin:0 auto;}
+
+/* alternating rows — BIG and readable */
+.srv-row{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-top:1px solid var(--border);
+}
+.srv-row.flip{direction:rtl;}
+.srv-row.flip > *{direction:ltr;}
+.srv-img-col{
+  overflow:hidden;
+  min-height:420px;
+}
+.srv-img-col img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(.88) saturate(.85);
+  transition:transform .6s,filter .6s;
+}
+.srv-row:hover .srv-img-col img{
+  transform:scale(1.04);filter:brightness(.95) saturate(1);
+}
+.srv-text-col{
+  background:var(--white);
+  padding:64px 60px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.srv-num{
+  font-family:var(--serif);font-size:13px;font-weight:500;
+  letter-spacing:3px;color:var(--gold);margin-bottom:20px;display:block;
+}
+.srv-text-col h3{
+  font-family:var(--serif);font-size:34px;font-weight:700;
+  color:var(--navy);margin-bottom:16px;line-height:1.15;
+}
+.srv-text-col p{
+  font-family:var(--sans);font-size:18px;font-weight:300;
+  color:var(--ink2);line-height:1.85;margin-bottom:24px;
+}
 .srv-list{list-style:none;}
-.srv-list li{font-size:12.5px;color:var(--text-muted);padding:5px 0 5px 16px;position:relative;line-height:1.55;transition:color .35s;}
-.srv-list li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:1px;background:var(--gold);}
-.srv-card:hover .srv-list li{color:rgba(255,255,255,.5);}
-.srv-bottom-bar{grid-column:1/-1;background:var(--navy);padding:32px 36px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
-.srv-bottom-bar p{font-size:14px;color:rgba(255,255,255,.65);font-weight:300;}
-.srv-bottom-bar a{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-size:13px;letter-spacing:1px;text-decoration:none;text-transform:uppercase;font-weight:500;}
+.srv-list li{
+  font-family:var(--sans);font-size:16px;font-weight:400;
+  color:var(--ink2);padding:10px 0 10px 20px;
+  position:relative;line-height:1.5;
+  border-bottom:1px solid var(--border);
+}
+.srv-list li:last-child{border-bottom:none;}
+.srv-list li::before{
+  content:'';position:absolute;left:0;top:20px;
+  width:8px;height:2px;background:var(--gold);
+}
 
-#clients{background:var(--white);}
-.clients-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1200px;margin:48px auto 0;}
-.cli-card{padding:36px 32px;border:1px solid var(--border);display:flex;gap:20px;align-items:flex-start;transition:all .3s;}
-.cli-card:hover{border-color:var(--gold);background:var(--off-white);}
-.cli-icon{width:50px;height:50px;min-width:50px;background:var(--light-bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:22px;}
-.cli-card h4{font-size:15.5px;color:var(--navy);font-weight:600;margin-bottom:8px;}
-.cli-card p{font-size:13px;color:var(--text-muted);line-height:1.75;}
-.peer-review-bar{background:var(--navy);display:flex;align-items:center;justify-content:center;gap:48px;padding:36px 56px;flex-wrap:wrap;margin-top:56px;}
-.pr-item{text-align:center;}
-.pr-item .pr-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:var(--gold);line-height:1;}
-.pr-item .pr-lbl{font-size:11px;letter-spacing:1.5px;color:rgba(255,255,255,.45);text-transform:uppercase;margin-top:4px;}
-.pr-divider{width:1px;background:rgba(255,255,255,.1);height:48px;}
+/* ── CLIENTELE ───────────────────────────────────── */
+#clients{background:var(--white);padding:110px 60px;}
+.clients-inner{max-width:1280px;margin:0 auto;}
+.cli-cards{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px;}
+.cli-card{
+  padding:40px 36px;border:1px solid var(--border);
+  display:flex;gap:24px;align-items:flex-start;
+  transition:all .3s;background:var(--white);
+}
+.cli-card:hover{border-color:var(--gold);background:var(--off);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.07);}
+.cli-ico{
+  width:60px;height:60px;min-width:60px;
+  background:var(--stone);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.cli-card h4{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--navy);margin-bottom:10px;}
+.cli-card p{font-family:var(--sans);font-size:17px;color:var(--ink3);line-height:1.8;font-weight:300;}
 
-#team{background:var(--light-bg);}
-.team-wrap{display:grid;grid-template-columns:380px 1fr;gap:72px;align-items:start;max-width:1200px;margin:0 auto;}
-.team-lead-card{background:var(--white);border:1px solid var(--border);text-align:center;padding:52px 36px;position:relative;}
-.team-lead-card::before{content:'';position:absolute;top:0;left:20%;right:20%;height:3px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
-.tl-avatar{width:96px;height:96px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:var(--gold);margin:0 auto 22px;}
-.team-lead-card h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--navy);font-weight:600;margin-bottom:4px;}
-.tl-role{font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:20px;}
-.tl-bio{font-size:13.5px;color:var(--text-muted);line-height:1.75;margin-bottom:22px;}
+.milebar{
+  display:flex;background:var(--navy);
+  margin-top:64px;flex-wrap:wrap;
+}
+.milebar-item{
+  flex:1;padding:42px 36px;text-align:center;
+  border-right:1px solid rgba(255,255,255,.08);
+  min-width:160px;
+}
+.milebar-item:last-child{border-right:none;}
+.mi-n{font-family:var(--serif);font-size:52px;font-weight:700;color:var(--gold2);line-height:1;}
+.mi-l{
+  font-family:var(--sans);font-size:12px;font-weight:700;
+  letter-spacing:1.5px;color:rgba(255,255,255,.38);
+  text-transform:uppercase;margin-top:8px;
+}
+
+/* ── TEAM ────────────────────────────────────────── */
+#team{background:var(--stone);padding:110px 60px;}
+.team-wrap{display:grid;grid-template-columns:360px 1fr;gap:80px;align-items:start;max-width:1240px;margin:0 auto;}
+.tl-card{
+  background:var(--white);border:1px solid var(--border);
+  text-align:center;padding:56px 38px;position:relative;
+}
+.tl-card::after{
+  content:'';position:absolute;top:0;left:25%;right:25%;height:4px;
+  background:linear-gradient(to right,transparent,var(--gold),transparent);
+}
+.tl-av{
+  width:108px;height:108px;border-radius:50%;
+  background:var(--navy);margin:0 auto 24px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:44px;font-weight:700;color:var(--gold);
+  box-shadow:0 0 0 8px rgba(176,125,46,.1);
+}
+.tl-card h3{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.tl-role{
+  font-family:var(--sans);font-size:12px;font-weight:700;
+  letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;
+  display:block;margin-bottom:20px;
+}
+.tl-bio{font-family:var(--sans);font-size:17px;color:var(--ink3);line-height:1.8;margin-bottom:22px;font-weight:300;}
+.tl-phone{
+  font-family:var(--sans);font-size:17px;font-weight:700;
+  color:var(--navy);margin-bottom:24px;
+}
+.tl-phone a{color:var(--navy);text-decoration:none;}
 .tl-certs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
-.tl-cert{padding:5px 14px;background:var(--light-bg);border:1px solid var(--border);font-size:11.5px;color:var(--navy);letter-spacing:.5px;}
-.team-right h2{text-align:left;}
-.team-right .sec-rule{margin-left:0;}
-.team-right .sec-desc{margin-bottom:32px;}
-.network-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;}
-.net-item{padding:20px 22px;border:1px solid var(--border);background:var(--white);display:flex;align-items:flex-start;gap:14px;}
-.net-item .ni-icon{font-size:20px;flex-shrink:0;}
-.ni-label{font-size:11px;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;}
-.ni-val{font-size:13px;color:var(--navy);font-weight:500;}
+.tl-cert{
+  padding:7px 16px;background:var(--stone);border:1px solid var(--border);
+  font-family:var(--sans);font-size:13px;font-weight:700;color:var(--navy);
+}
 
-#contact{background:var(--white);padding:0;}
-.contact-top{background:var(--navy);padding:80px 56px 64px;}
-.contact-top-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.contact-top h2{color:#fff;}
-.contact-top h2 span{color:var(--gold);}
-.ct-desc{font-size:15px;color:rgba(255,255,255,.55);line-height:1.85;margin-top:20px;font-weight:300;}
-.contact-details{display:flex;flex-direction:column;gap:0;}
-.cd-item{display:flex;gap:18px;align-items:flex-start;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.08);}
-.cd-item:last-child{border-bottom:none;}
-.cd-icon{width:40px;height:40px;min-width:40px;background:rgba(184,146,58,.15);border:1px solid rgba(184,146,58,.3);display:flex;align-items:center;justify-content:center;font-size:16px;}
-.cd-label{font-size:10.5px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
-.cd-val{font-size:14px;color:rgba(255,255,255,.75);}
-.cd-val a{color:rgba(255,255,255,.75);text-decoration:none;transition:color .25s;display:block;}
+.team-r .u-h2{text-align:left;}
+.team-r .u-rule{margin-left:0;}
+.team-r .u-lead{margin-bottom:36px;}
+.net-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.net-card{
+  padding:24px 24px;border:1px solid var(--border);background:var(--white);
+  display:flex;align-items:flex-start;gap:18px;
+}
+.nc-icon{flex-shrink:0;margin-top:2px;}
+.nc-lbl{
+  font-family:var(--sans);font-size:11px;font-weight:700;
+  letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;
+}
+.nc-val{font-family:var(--sans);font-size:16px;font-weight:700;color:var(--navy);line-height:1.5;}
+
+/* ── CONTACT ─────────────────────────────────────── */
+#contact{padding:0;}
+.contact-banner{background:var(--navy);padding:96px 60px 80px;}
+.cb-inner{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start;}
+.cb-left .u-h2{color:#fff;}
+.cb-left .u-h2 i{color:var(--gold);}
+.cb-left .u-lead{color:rgba(255,255,255,.5);font-size:19px;margin-top:18px;}
+.cd-rows{display:flex;flex-direction:column;}
+.cd-row{
+  display:flex;gap:22px;align-items:flex-start;
+  padding:24px 0;border-bottom:1px solid rgba(255,255,255,.08);
+}
+.cd-row:last-child{border-bottom:none;}
+.cd-ico{
+  width:46px;height:46px;min-width:46px;
+  background:rgba(176,125,46,.15);
+  border:1px solid rgba(176,125,46,.28);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.cd-lbl{
+  font-family:var(--sans);font-size:11px;font-weight:700;
+  letter-spacing:2px;color:var(--gold);text-transform:uppercase;
+  display:block;margin-bottom:6px;
+}
+.cd-val{font-family:var(--sans);font-size:16px;color:rgba(255,255,255,.65);line-height:1.7;}
+.cd-val a{color:rgba(255,255,255,.65);text-decoration:none;display:block;transition:color .25s;}
 .cd-val a:hover{color:var(--gold);}
-.contact-form-section{padding:64px 56px;background:var(--off-white);}
-.cfs-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;max-width:1200px;margin:0 auto;}
-.form-header h3{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--navy);font-weight:600;margin-bottom:10px;}
-.form-header p{font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:32px;}
-.wa-big-btn{display:flex;align-items:center;gap:16px;background:#25d366;color:#fff;padding:18px 28px;text-decoration:none;margin-bottom:12px;transition:all .3s;}
-.wa-big-btn:hover{background:#1ebe5d;transform:translateX(4px);}
-.wa-big-btn .wa-icon{font-size:24px;}
-.wa-big-btn div strong{display:block;font-size:15px;font-weight:600;}
-.wa-big-btn div span{font-size:12px;opacity:.85;}
-.email-big-btn{display:flex;align-items:center;gap:16px;border:1.5px solid var(--navy);color:var(--navy);padding:18px 28px;text-decoration:none;transition:all .3s;}
-.email-big-btn:hover{background:var(--navy);color:#fff;}
-.email-big-btn .em-icon{font-size:22px;}
-.email-big-btn div strong{display:block;font-size:15px;font-weight:600;}
-.email-big-btn div span{font-size:12px;opacity:.65;}
-.fg{margin-bottom:18px;}
-.fg label{display:block;font-size:11px;letter-spacing:1.5px;color:var(--text-muted);text-transform:uppercase;margin-bottom:7px;font-weight:500;}
-.fg input,.fg select,.fg textarea{width:100%;padding:13px 16px;border:1px solid var(--border);background:var(--white);color:var(--text);font-size:14px;font-family:'Outfit',sans-serif;outline:none;transition:border-color .25s;resize:none;}
+
+.contact-form-area{padding:80px 60px;background:var(--off);}
+.cfa-inner{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+.qc-head h3{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--navy);margin-bottom:10px;}
+.qc-head p{font-family:var(--sans);font-size:19px;color:var(--ink3);line-height:1.75;margin-bottom:36px;font-weight:300;}
+.wa-link{
+  display:flex;align-items:center;gap:20px;
+  background:#25d366;color:#fff;padding:22px 30px;
+  text-decoration:none;margin-bottom:16px;transition:all .3s;
+}
+.wa-link:hover{background:#1ebe5d;transform:translateX(6px);}
+.wa-link strong{display:block;font-family:var(--sans);font-size:18px;font-weight:700;}
+.wa-link span{font-family:var(--sans);font-size:14px;opacity:.85;}
+.em-link{
+  display:flex;align-items:center;gap:20px;
+  border:2px solid var(--navy);color:var(--navy);
+  padding:22px 30px;text-decoration:none;transition:all .3s;
+}
+.em-link:hover{background:var(--navy);color:#fff;}
+.em-link strong{display:block;font-family:var(--sans);font-size:18px;font-weight:700;}
+.em-link span{font-family:var(--sans);font-size:14px;opacity:.7;}
+
+/* form */
+.fg{margin-bottom:22px;}
+.fg label{
+  display:block;font-family:var(--sans);font-size:12px;font-weight:700;
+  letter-spacing:2px;color:var(--ink3);text-transform:uppercase;margin-bottom:9px;
+}
+.fg input,.fg select,.fg textarea{
+  width:100%;padding:17px 20px;
+  border:1.5px solid var(--border);background:var(--white);
+  color:var(--ink);font-size:19px;font-family:var(--sans);font-weight:300;
+  outline:none;transition:border-color .25s;resize:none;
+}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);}
-.fg select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%23b8923a'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;cursor:pointer;}
-.form-actions{display:flex;gap:12px;margin-top:24px;}
-.f-btn-wa{flex:1;background:#25d366;color:#fff;padding:15px;font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:600;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .3s;}
-.f-btn-wa:hover{background:#1ebe5d;}
-.f-btn-em{flex:1;background:var(--navy);color:#fff;padding:15px;font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:600;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .3s;}
-.f-btn-em:hover{background:var(--gold);}
+.fg select{
+  appearance:none;cursor:pointer;font-size:18px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M0 0l7 9 7-9z' fill='%23b07d2e'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 20px center;
+}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(107,107,107,.5);font-style:italic;}
+.form-btns{display:flex;gap:14px;margin-top:30px;}
+.fb-wa{
+  flex:1;background:#25d366;color:#fff;
+  padding:18px;font-family:var(--sans);font-size:15px;
+  font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  cursor:pointer;border:none;transition:background .3s;
+}
+.fb-wa:hover{background:#1ebe5d;}
+.fb-em{
+  flex:1;background:var(--navy);color:#fff;
+  padding:18px;font-family:var(--sans);font-size:15px;
+  font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  cursor:pointer;border:none;transition:background .3s;
+}
+.fb-em:hover{background:var(--gold);}
 
-footer{background:var(--navy);border-top:3px solid var(--gold);padding:48px 56px 36px;}
-.footer-inner{max-width:1300px;margin:0 auto;}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);}
-.footer-brand h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;font-weight:600;margin-bottom:4px;}
-.footer-brand .fb-role{font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;display:block;}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.8;}
-.footer-col h4{font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;font-weight:500;}
-.footer-col a,.footer-col p{display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:10px;transition:color .25s;line-height:1.6;}
-.footer-col a:hover{color:var(--gold);}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;}
-.footer-bottom p{font-size:12px;color:rgba(255,255,255,.3);}
-.icai-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border:1px solid rgba(184,146,58,.3);font-size:11px;color:rgba(184,146,58,.7);letter-spacing:1px;}
+/* ── FOOTER ──────────────────────────────────────── */
+footer{background:var(--navy);border-top:4px solid var(--gold);}
+.foot-main{
+  display:grid;grid-template-columns:2.2fr 1fr 1fr;
+  gap:60px;padding:68px 60px 52px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  max-width:1300px;margin:0 auto;
+}
+.fb-brand{display:flex;flex-direction:column;gap:22px;}
+.fb-logo-row{display:flex;align-items:center;gap:18px;}
+.fb-name strong{display:block;font-family:var(--serif);font-size:26px;font-weight:700;color:#fff;}
+.fb-name em{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;font-style:normal;display:block;margin-top:2px;}
+.fb-addr{font-family:var(--sans);font-size:15px;color:rgba(255,255,255,.38);line-height:1.95;font-weight:300;}
+.foot-col h4{
+  font-family:var(--sans);font-size:11px;font-weight:700;
+  letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:22px;
+}
+.foot-col a,.foot-col p{
+  display:block;font-family:var(--sans);font-size:15px;font-weight:300;
+  color:rgba(255,255,255,.42);text-decoration:none;margin-bottom:12px;
+  transition:color .25s;line-height:1.6;
+}
+.foot-col a:hover{color:var(--gold);}
+.foot-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:26px 60px;flex-wrap:wrap;gap:14px;
+  max-width:1300px;margin:0 auto;
+}
+.foot-bottom p{font-family:var(--sans);font-size:13px;color:rgba(255,255,255,.28);font-weight:300;}
+.icai-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 22px;border:1px solid rgba(176,125,46,.28);
+  font-family:var(--sans);font-size:12px;font-weight:700;
+  color:rgba(176,125,46,.65);letter-spacing:1px;
+}
 
-.float-group{position:fixed;bottom:28px;right:28px;z-index:300;display:flex;flex-direction:column;gap:10px;}
-.flt{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;transition:all .3s;cursor:pointer;}
-.flt-wa{background:#25d366;box-shadow:0 4px 20px rgba(37,211,102,.35);animation:wa-pulse 2.5s infinite;}
-.flt-wa:hover{transform:scale(1.1);animation:none;box-shadow:0 6px 28px rgba(37,211,102,.55);}
-.flt-em{background:var(--navy);box-shadow:0 4px 20px rgba(13,34,64,.35);}
-.flt-em:hover{transform:scale(1.1);background:var(--gold);}
-@keyframes wa-pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.35);}50%{box-shadow:0 4px 28px rgba(37,211,102,.6),0 0 0 7px rgba(37,211,102,.1);}}
+/* ── FLOATING ─────────────────────────────────────── */
+.floats{position:fixed;bottom:30px;right:30px;z-index:990;display:flex;flex-direction:column;gap:12px;}
+.fl{
+  width:58px;height:58px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;transition:all .3s;cursor:pointer;
+}
+.fl-w{background:#25d366;box-shadow:0 4px 20px rgba(37,211,102,.35);animation:wpulse 2.5s infinite;}
+.fl-w:hover{transform:scale(1.12);animation:none;}
+.fl-e{background:var(--navy);box-shadow:0 4px 20px rgba(11,31,58,.35);}
+.fl-e:hover{transform:scale(1.12);background:var(--gold);}
+@keyframes wpulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.35);}50%{box-shadow:0 4px 28px rgba(37,211,102,.6),0 0 0 9px rgba(37,211,102,.09);}}
 
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s;}
-.reveal.in{opacity:1;transform:none;}
-.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}.d5{transition-delay:.5s;}
+/* ── REVEAL ──────────────────────────────────────── */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s;}
+.rv.in{opacity:1;transform:none;}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
-@media(max-width:960px){
-  nav{padding:0 24px;}
-  .nav-menu{display:none;}
+/* ── RESPONSIVE ──────────────────────────────────── */
+@media(max-width:980px){
+  nav{padding:0 24px;height:76px;}
+  .nav-links{display:none;}
+  .nav-cta{margin-left:16px;padding:11px 18px;font-size:12px;}
   #hero{grid-template-columns:1fr;}
-  .hero-left{padding:80px 24px 56px;}
-  .hero-right{padding:56px 24px;}
-  section{padding:72px 24px;}
-  .about-grid,.team-wrap,.contact-top-inner,.cfs-inner,.footer-top{grid-template-columns:1fr;gap:40px;}
-  .srv-grid{grid-template-columns:1fr;}
-  .clients-grid{grid-template-columns:1fr;}
-  .network-grid{grid-template-columns:1fr;}
-  .footer-bottom{flex-direction:column;text-align:center;}
-  .peer-review-bar{gap:24px;padding:36px 24px;}
-  .contact-form-section{padding:48px 24px;}
+  .hero-l{padding:80px 24px 56px;}
+  .hero-r{padding:56px 24px;}
+  #about,#clients,#team{padding:80px 24px;}
+  #services{padding:80px 0;}
+  .srv-header{padding:0 24px;}
+  .about-grid,.team-wrap,.cb-inner,.cfa-inner,.foot-main{grid-template-columns:1fr;gap:44px;}
+  .srv-row,.cli-cards,.net-grid{grid-template-columns:1fr;}
+  .srv-row.flip{direction:ltr;}
+  .contact-banner,.contact-form-area{padding:64px 24px;}
+  .milebar{flex-direction:column;}
+  .milebar-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);}
+  .foot-bottom{flex-direction:column;text-align:center;}
+  .foot-main{padding:56px 24px 44px;}
 }
 </style>
 </head>
 <body>
 
+<!-- ════════════════ NAVBAR ════════════════ -->
 <nav>
-  <div class="nav-brand">
-    <div class="nav-seal">PL</div>
-    <div class="nav-name">
-      <strong>P.L. & Associates</strong>
-      <span>Chartered Accountants</span>
+  <div class="nav-left">
+    <!-- Accurate CA India Logo SVG based on official ICAI design -->
+    <div class="ca-logo">
+      <svg width="80" height="58" viewBox="0 0 80 58" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CA India ICAI Logo">
+        <!-- C letter -->
+        <path d="M 8 29 
+                 C 8 14 17 6 29 6 
+                 C 35 6 40 8.5 43.5 12.5
+                 L 37 18
+                 C 34.5 15 32 13.5 29 13.5
+                 C 21 13.5 16 20 16 29
+                 C 16 38 21 44.5 29 44.5
+                 C 32.5 44.5 35.5 43 38 40
+                 L 44.5 45.5
+                 C 40.5 49.5 35.5 52 29 52
+                 C 17 52 8 44 8 29 Z"
+              fill="#2C6EA6"/>
+        <!-- A letter -->
+        <path d="M 47 51 L 58 8 L 69 8 L 80 51 L 72 51 L 70 43 L 57 43 L 55 51 Z
+                 M 59 36 L 71 36 L 65 14 Z"
+              fill="#2C6EA6"/>
+        <!-- Tricolor diagonal swoosh through letters -->
+        <!-- Saffron/Orange stripe -->
+        <path d="M 34 4 L 72 4 L 68 12 L 30 12 Z" fill="#FF9933" opacity="0.92"/>
+        <!-- White stripe -->
+        <path d="M 30 12 L 68 12 L 64 20 L 26 20 Z" fill="#ffffff" opacity="0.95"/>
+        <!-- Green stripe -->
+        <path d="M 26 20 L 64 20 L 60 28 L 22 28 Z" fill="#138808" opacity="0.92"/>
+        <!-- Redraw A/C shapes on top so stripes appear to pass through/behind -->
+      </svg>
+    </div>
+    <div class="nav-sep"></div>
+    <div class="nav-brand-text">
+      <strong>P.L. &amp; Associates</strong>
+      <span>Chartered Accountants · Chennai</span>
     </div>
   </div>
-  <div class="nav-menu">
+  <div class="nav-links">
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#clients">Clientele</a>
     <a href="#team">Team</a>
     <a href="#contact">Contact</a>
   </div>
-  <a href="https://wa.me/919003254592?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" class="nav-btn">Enquire Now</a>
+  <a class="nav-cta" href="https://wa.me/919003254592?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.103 1.524 5.836L.057 23.715c-.077.286.212.553.494.458l5.787-1.842A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.102-1.43l-.366-.217-3.791 1.207 1.159-3.896-.237-.388A9.794 9.794 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+    Enquire Now
+  </a>
 </nav>
 
+<!-- ════════════════ HERO ════════════════ -->
 <section id="hero">
-  <div class="hero-left">
-    <div class="est-badge">Established 1995 · Chennai</div>
-    <h1>P.L. <em>&</em><br>Associates</h1>
+  <div class="hero-l">
+    <div class="hero-est">Established 1995 · Chennai, India</div>
+    <h1 class="hero-h1">P.L. <i>&</i><br>Associates</h1>
     <p class="hero-sub">Chartered Accountants</p>
     <div class="hero-rule"></div>
-    <p class="hero-desc">Thirty years of excellence in Audit, Taxation, Corporate Law, Foreign Exchange, and Financial Advisory. Serving corporates, banks, trusts, and institutions across India — with integrity at the core of every engagement.</p>
+    <p class="hero-p">Three decades of trust, integrity, and excellence in Audit, Taxation, Corporate Law, Foreign Exchange, and Financial Advisory — proudly serving corporates, banks, trusts, and institutions across India.</p>
     <div class="hero-btns">
-      <a href="https://wa.me/919003254592?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20P.L.%20%26%20Associates%20services." target="_blank" class="btn-gold">📱 WhatsApp Us</a>
-      <a href="#services" class="btn-outline">Our Services ↓</a>
+      <a class="btn-a" href="https://wa.me/919003254592?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20P.L.%20%26%20Associates%20services." target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.103 1.524 5.836L.057 23.715c-.077.286.212.553.494.458l5.787-1.842A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.102-1.43l-.366-.217-3.791 1.207 1.159-3.896-.237-.388A9.794 9.794 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        WhatsApp Us
+      </a>
+      <a class="btn-b" href="#services">Our Services ↓</a>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-right-inner">
-      <div class="hero-stats-row">
-        <div class="hstat"><div class="hstat-num">30<sup style="font-size:20px">+</sup></div><div class="hstat-lbl">Years of Practice</div></div>
-        <div class="hstat"><div class="hstat-num">2×</div><div class="hstat-lbl">Peer Reviewed</div></div>
-        <div class="hstat"><div class="hstat-num">6</div><div class="hstat-lbl">Core Services</div></div>
+  <div class="hero-r">
+    <div class="stat-row">
+      <div class="stat-c"><div class="stat-n">30<sup style="font-size:24px">+</sup></div><div class="stat-l">Years of Practice</div></div>
+      <div class="stat-c"><div class="stat-n">2×</div><div class="stat-l">Peer Reviewed</div></div>
+      <div class="stat-c"><div class="stat-n">6</div><div class="stat-l">Core Services</div></div>
+    </div>
+    <div class="feat-rows">
+      <div class="feat-row">
+        <div class="feat-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="feat-text"><h4>Ethical Practice</h4><p>ICAI-registered firm upholding the highest professional standards since 1995</p></div>
       </div>
-      <div class="hero-cards">
-        <div class="hcard"><div class="hcard-icon">⚖️</div><div><h4>Ethical Practice</h4><p>ICAI-registered firm upholding the highest professional standards</p></div></div>
-        <div class="hcard"><div class="hcard-icon">🏦</div><div><h4>Bank Audit Expertise</h4><p>Statutory auditors for Andhra Bank, Central Bank of India &amp; IOB</p></div></div>
-        <div class="hcard"><div class="hcard-icon">🌐</div><div><h4>Pan-India Network</h4><p>CAs in Bangalore, Hyderabad, Tirunelveli &amp; Coimbatore</p></div></div>
-        <div class="hcard"><div class="hcard-icon">🔒</div><div><h4>Systems &amp; Forensic Audit</h4><p>Specialised systems audit for banks &amp; forensic audit certification</p></div></div>
+      <div class="feat-row">
+        <div class="feat-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="1.8" stroke-linecap="round"><path d="M3 21h18M3 10h18M3 7l9-4 9 4M5 10v11M19 10v11M9 10v11M15 10v11"/></svg></div>
+        <div class="feat-text"><h4>Bank Audit Expertise</h4><p>Statutory auditors for Andhra Bank, Central Bank of India &amp; IOB</p></div>
+      </div>
+      <div class="feat-row">
+        <div class="feat-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
+        <div class="feat-text"><h4>Pan-India Network</h4><p>CAs in Bangalore, Hyderabad, Tirunelveli &amp; Coimbatore for outstation work</p></div>
+      </div>
+      <div class="feat-row">
+        <div class="feat-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="feat-text"><h4>Systems &amp; Forensic Audit</h4><p>Specialised IT systems audit for banks, certified forensic auditor</p></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ════════════════ ABOUT ════════════════ -->
 <section id="about">
   <div class="about-grid">
-    <div class="reveal">
-      <div class="vision-block">
-        <h3>Vision Statement</h3>
-        <p>"To deliver services that enhance client organizational performance and assure all stakeholders a true and fair reflection of financial statements with utmost integrity and commitment to excellence."</p>
-        <div class="mission-strip">
+    <div class="rv">
+      <div class="vision-panel">
+        <span class="vp-tag">Vision Statement</span>
+        <p class="vp-quote">"To deliver services that enhance client organizational performance and assure all stakeholders a true and fair reflection of financial statements with utmost integrity and commitment to excellence."</p>
+        <div class="vp-mission">
           <h4>Mission</h4>
-          <p>Provide cost-effective, best-in-quality services to accounting leads that enhance value through supporting the business in managing core &amp; allied accounting activities.</p>
+          <p>Provide cost-effective, best-in-quality services that enhance value through supporting businesses in managing core &amp; allied accounting activities.</p>
         </div>
       </div>
     </div>
-    <div class="about-right reveal d2">
-      <span class="sec-tag">About The Firm</span>
-      <h2>A Legacy Built on <span>Trust</span></h2>
-      <div class="sec-rule"></div>
-      <p class="about-para">P.L. & Associates was established in 1995 in Chennai as a partnership firm of FCA professionals, now operating as a proprietary organisation. For over three decades, we have rendered quality professional services to a distinguished clientele.</p>
-      <p class="about-para">Our firm has been subject to Peer Review Audit twice — in 2008 and in 2013 — reflecting our commitment to quality. We hold strategic ties with CA firms, Management Consultants, Cost Accountants, Company Secretaries, Lawyers, Engineers, and Architects across India.</p>
-      <div class="proprietrix-card">
-        <div class="pr-avatar">P</div>
+    <div class="about-copy rv d2">
+      <span class="u-tag">About The Firm</span>
+      <h2 class="u-h2">A Legacy Built on <i>Trust</i></h2>
+      <div class="u-rule"></div>
+      <p class="u-lead">P.L. &amp; Associates was established in 1995 in Chennai as a partnership firm of FCA professionals. For over three decades, we have delivered quality professional services to a distinguished clientele spanning banks, corporations, trusts, and government institutions.</p>
+      <p class="u-lead" style="margin-top:18px;">Our firm has been Peer Reviewed twice — in 2008 and in 2013 — a mark of our unwavering commitment to quality. We hold strong ties with CA firms, Management Consultants, Cost Accountants, Company Secretaries, Lawyers, Engineers, and Architects across India.</p>
+      <div class="pr-box">
+        <div class="pr-av">P</div>
         <div class="pr-info">
           <h4>Prabha. G</h4>
-          <span class="role">Proprietrix &amp; Principal CA</span>
-          <p>B.Com · FCA · DISA (ICAI) · Certified in Forensic Audit. 21+ years of experience with large Group Companies. Expert in Internal &amp; Statutory Audit, ROC formalities, and Systems Audit for Banks.</p>
+          <em>Proprietrix &amp; Principal CA</em>
+          <p>B.Com · FCA · DISA (ICAI) · Certified in Forensic Audit. Over 21 years with large Group Companies in Chennai — expert in Internal &amp; Statutory Audit, ROC formalities, and Systems Audit for Banks and NBFIs.</p>
         </div>
       </div>
-      <div class="cert-chips">
-        <span class="chip">FCA</span>
-        <span class="chip">DISA (ICA)</span>
-        <span class="chip">Forensic Audit Certified</span>
-        <span class="chip">Systems Auditor</span>
-        <span class="chip">ICAI Member</span>
-        <span class="chip">Peer Review Certified Firm</span>
+      <div class="cert-row">
+        <span class="cert">FCA</span>
+        <span class="cert">DISA (ICA)</span>
+        <span class="cert">Forensic Audit</span>
+        <span class="cert">Systems Auditor</span>
+        <span class="cert">ICAI Member</span>
+        <span class="cert">Peer Review Certified</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ════════════════ SERVICES ════════════════ -->
 <section id="services">
-  <div class="services-header reveal">
-    <span class="sec-tag">What We Offer</span>
-    <h2>Our <span>Services</span></h2>
-    <div class="sec-rule" style="margin:0 auto 20px;"></div>
-    <p class="sec-desc">Comprehensive financial, legal, and compliance services — tailored for businesses of every size, from startups to multinationals.</p>
+  <div class="srv-header rv">
+    <span class="u-tag">What We Offer</span>
+    <h2 class="u-h2">Our <i>Services</i></h2>
+    <div class="u-rule" style="margin:0 auto 26px;"></div>
+    <p class="u-lead">Comprehensive financial, legal, and compliance services — crafted for businesses of every scale, from startups to multinational corporations.</p>
   </div>
-  <div class="srv-grid">
-    <div class="srv-card reveal d1">
-      <span class="srv-num">01</span>
-      <span class="srv-icon">🧾</span>
+
+  <!-- Row 1 -->
+  <div class="srv-row rv">
+    <div class="srv-img-col">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=85&fit=crop" alt="Income Tax Matters" loading="lazy"/>
+    </div>
+    <div class="srv-text-col">
+      <span class="srv-num">Service 01</span>
       <h3>Income Tax Matters</h3>
-      <p>End-to-end income tax advisory, computation, filing, and representation.</p>
+      <p>End-to-end income tax advisory, computation, filing, and representation for every category of assessee.</p>
       <ul class="srv-list">
         <li>Tax-efficient investment structuring for individuals &amp; corporates</li>
-        <li>Salary structuring including expatriates</li>
+        <li>Salary structuring — including for expatriates</li>
         <li>ITR filing for companies, firms, trusts &amp; individuals</li>
-        <li>Attending proceedings before AO &amp; Appellate Authorities / ITAT</li>
+        <li>Attending proceedings before AO, Appellate Authorities &amp; ITAT</li>
       </ul>
     </div>
-    <div class="srv-card reveal d2">
-      <span class="srv-num">02</span>
-      <span class="srv-icon">🏢</span>
+  </div>
+
+  <!-- Row 2 (flipped) -->
+  <div class="srv-row flip rv">
+    <div class="srv-img-col">
+      <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=900&q=85&fit=crop" alt="Company Law Matters" loading="lazy"/>
+    </div>
+    <div class="srv-text-col">
+      <span class="srv-num">Service 02</span>
       <h3>Company Law Matters</h3>
-      <p>Complete corporate compliance and statutory company law support.</p>
+      <p>Complete corporate compliance and statutory support under the Companies Act.</p>
       <ul class="srv-list">
         <li>Company incorporation; LO/BO/PO registration for foreign entities</li>
-        <li>Board meeting, EGM &amp; AGM minutes and annual returns</li>
+        <li>Board meeting, EGM &amp; AGM minutes; annual returns filing</li>
         <li>Formation of Societies and Trusts</li>
-        <li>Charge registration and statutory inspections</li>
+        <li>Charge registration and statutory compliance inspections</li>
       </ul>
     </div>
-    <div class="srv-card reveal d3">
-      <span class="srv-num">03</span>
-      <span class="srv-icon">🔍</span>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="srv-row rv">
+    <div class="srv-img-col">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=85&fit=crop" alt="Statutory and Internal Audit" loading="lazy"/>
+    </div>
+    <div class="srv-text-col">
+      <span class="srv-num">Service 03</span>
       <h3>Statutory &amp; Internal Audit</h3>
-      <p>Independent, thorough audit services across banking and corporate sectors.</p>
+      <p>Independent, thorough audit services across banking and corporate sectors for over three decades.</p>
       <ul class="srv-list">
         <li>Revenue and Stock Audit for nationalised &amp; scheduled banks</li>
         <li>Statutory and Internal Audits for companies, societies &amp; trusts</li>
@@ -358,23 +769,35 @@ footer{background:var(--navy);border-top:3px solid var(--gold);padding:48px 56px
         <li>Third-party confirmations: intercompany, vendor &amp; bank</li>
       </ul>
     </div>
-    <div class="srv-card reveal d1">
-      <span class="srv-num">04</span>
-      <span class="srv-icon">🌐</span>
+  </div>
+
+  <!-- Row 4 (flipped) -->
+  <div class="srv-row flip rv">
+    <div class="srv-img-col">
+      <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=900&q=85&fit=crop" alt="Foreign Exchange FEMA" loading="lazy"/>
+    </div>
+    <div class="srv-text-col">
+      <span class="srv-num">Service 04</span>
       <h3>Foreign Exchange (FEMA)</h3>
-      <p>Expert guidance on India's foreign exchange regulations and RBI approvals.</p>
+      <p>Expert guidance on India's foreign exchange regulations, RBI approvals, and international investment matters.</p>
       <ul class="srv-list">
         <li>FEMA compliance advisory and certification</li>
         <li>FDI policy counsel and FIPB investment proposals</li>
-        <li>RBI approvals for share transfer &amp; forex transactions</li>
+        <li>RBI approvals for share transfers &amp; forex transactions</li>
         <li>Technology transfer, EPC contracts, foreign currency loans</li>
       </ul>
     </div>
-    <div class="srv-card reveal d2">
-      <span class="srv-num">05</span>
-      <span class="srv-icon">📊</span>
+  </div>
+
+  <!-- Row 5 -->
+  <div class="srv-row rv">
+    <div class="srv-img-col">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=85&fit=crop" alt="Accounting Services" loading="lazy"/>
+    </div>
+    <div class="srv-text-col">
+      <span class="srv-num">Service 05</span>
       <h3>Accounting Services</h3>
-      <p>Full-spectrum bookkeeping and accounting management services.</p>
+      <p>Full-spectrum bookkeeping, accounting management, and financial reporting services.</p>
       <ul class="srv-list">
         <li>Invoice verification and salary advance monitoring</li>
         <li>Books of account maintenance per statutory provisions</li>
@@ -382,91 +805,94 @@ footer{background:var(--navy);border-top:3px solid var(--gold);padding:48px 56px
         <li>Bank, vendor &amp; intercompany reconciliations</li>
       </ul>
     </div>
-    <div class="srv-card reveal d3">
-      <span class="srv-num">06</span>
-      <span class="srv-icon">💡</span>
-      <h3>Systems Audit &amp; Advisory</h3>
-      <p>Technology-focused audit with forensic and project advisory capabilities.</p>
-      <ul class="srv-list">
-        <li>Systems Audit for bank branches (IOB – 7+ years)</li>
-        <li>ITT Audit for SIRC of ICAI (Dec 2013)</li>
-        <li>Forensic Audits, Due Diligence &amp; Valuations</li>
-        <li>Project reports &amp; loan follow-ups with TIIC, SIDBI</li>
-      </ul>
+  </div>
+
+  <!-- Row 6 (flipped) -->
+  <div class="srv-row flip rv">
+    <div class="srv-img-col">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=85&fit=crop" alt="Systems and Forensic Audit" loading="lazy"/>
     </div>
-    <div class="srv-bottom-bar reveal">
-      <p>Our clientele spans large &amp; medium Indian and multinational companies, government bodies, banks, trusts, societies, and educational institutions.</p>
-      <a href="#contact">Discuss Your Requirements →</a>
+    <div class="srv-text-col">
+      <span class="srv-num">Service 06</span>
+      <h3>Systems Audit &amp; Advisory</h3>
+      <p>Technology-focused audit with forensic investigation and financial project advisory capabilities.</p>
+      <ul class="srv-list">
+        <li>Systems Audit for bank branches (IOB — 7+ continuous years)</li>
+        <li>ITT Audit for SIRC of ICAI (December 2013)</li>
+        <li>Forensic Audits, Due Diligence &amp; Business Valuations</li>
+        <li>Project reports &amp; loan follow-ups with TIIC, SIDBI &amp; lenders</li>
+      </ul>
     </div>
   </div>
 </section>
 
+<!-- ════════════════ CLIENTS ════════════════ -->
 <section id="clients">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="center reveal">
-      <span class="sec-tag">Our Track Record</span>
-      <h2>Distinguished <span>Clientele</span></h2>
-      <div class="sec-rule"></div>
-      <p class="sec-desc" style="max-width:580px;margin:0 auto;">Trusted by banks, pharmaceutical companies, manufacturing firms, government institutions, and more.</p>
+  <div class="clients-inner">
+    <div class="u-center rv">
+      <span class="u-tag">Our Track Record</span>
+      <h2 class="u-h2">Distinguished <i>Clientele</i></h2>
+      <div class="u-rule"></div>
+      <p class="u-lead" style="max-width:640px;margin:0 auto;">Trusted by banks, pharmaceutical companies, manufacturers, government institutions, and more across India for over 30 years.</p>
     </div>
-    <div class="clients-grid">
-      <div class="cli-card reveal d1">
-        <div class="cli-icon">🏦</div>
+    <div class="cli-cards">
+      <div class="cli-card rv d1">
+        <div class="cli-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="1.8" stroke-linecap="round"><path d="M3 21h18M3 10h18M3 7l9-4 9 4M5 10v11M19 10v11M9 10v11M15 10v11"/></svg></div>
         <div>
-          <h4>Banking Sector Audits</h4>
-          <p>Statutory Auditors for Andhra Bank (5 years), Central Bank of India (3 years), and Indian Overseas Bank (4 years). Search work for IOB, Bharat Overseas Bank, and ABN-Amro Bank.</p>
+          <h4>Banking Sector</h4>
+          <p>Statutory Auditors for Andhra Bank (5 years), Central Bank of India (3 years), and Indian Overseas Bank (4 years). Search work for IOB, Bharat Overseas Bank, and ABN-Amro Bank with the Registrar of Companies.</p>
         </div>
       </div>
-      <div class="cli-card reveal d2">
-        <div class="cli-icon">🏭</div>
+      <div class="cli-card rv d2">
+        <div class="cli-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="1.8" stroke-linecap="round"><path d="M2 20h20M6 20V10M18 20V10M12 20V4M2 10l10-7 10 7"/></svg></div>
         <div>
           <h4>Corporate &amp; Pharma</h4>
-          <p>Internal Audit for Velvette International Pharma Products and TTK Health Care Ltd. Stock Audits for TTK across Madras, Bangalore, and Cochin.</p>
+          <p>Internal Audit for Velvette International Pharma Products and TTK Health Care Ltd. Stock Audits for TTK across Madras, Bangalore, and Cochin locations.</p>
         </div>
       </div>
-      <div class="cli-card reveal d3">
-        <div class="cli-icon">🏗️</div>
+      <div class="cli-card rv d3">
+        <div class="cli-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
         <div>
           <h4>Manufacturing &amp; Services</h4>
-          <p>Statutory Auditors for Paint Manufacturing, Fibre Door Manufacturing, Web Design Companies, and Non-Banking Financial Companies.</p>
+          <p>Statutory Auditors for Paint Manufacturing Co., Fibre Door Manufacturing Co., Web Design Companies, and Non-Banking Financial Companies.</p>
         </div>
       </div>
-      <div class="cli-card reveal d4">
-        <div class="cli-icon">🏛️</div>
+      <div class="cli-card rv d4">
+        <div class="cli-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="1.8" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
         <div>
           <h4>Institutions &amp; Government</h4>
           <p>Serving Government Companies, Trusts, Societies, Non-Public/Regimental Funds, Charitable and Educational Institutions throughout India.</p>
         </div>
       </div>
     </div>
-    <div class="peer-review-bar reveal">
-      <div class="pr-item"><div class="pr-num">1995</div><div class="pr-lbl">Year Established</div></div>
-      <div class="pr-divider"></div>
-      <div class="pr-item"><div class="pr-num">2008</div><div class="pr-lbl">First Peer Review</div></div>
-      <div class="pr-divider"></div>
-      <div class="pr-item"><div class="pr-num">2013</div><div class="pr-lbl">Second Peer Review</div></div>
-      <div class="pr-divider"></div>
-      <div class="pr-item"><div class="pr-num">7+</div><div class="pr-lbl">Years Systems Audit</div></div>
-      <div class="pr-divider"></div>
-      <div class="pr-item"><div class="pr-num">4</div><div class="pr-lbl">Outstation CA Cities</div></div>
+    <div class="milebar rv">
+      <div class="milebar-item"><div class="mi-n">1995</div><div class="mi-l">Established</div></div>
+      <div class="milebar-item"><div class="mi-n">2008</div><div class="mi-l">First Peer Review</div></div>
+      <div class="milebar-item"><div class="mi-n">2013</div><div class="mi-l">Second Peer Review</div></div>
+      <div class="milebar-item"><div class="mi-n">7+</div><div class="mi-l">Yrs Systems Audit IOB</div></div>
+      <div class="milebar-item"><div class="mi-n">4</div><div class="mi-l">Outstation CA Cities</div></div>
     </div>
   </div>
 </section>
 
+<!-- ════════════════ TEAM ════════════════ -->
 <section id="team">
-  <div class="center reveal" style="margin-bottom:56px;">
-    <span class="sec-tag">The People Behind the Work</span>
-    <h2>Our <span>Team</span></h2>
-    <div class="sec-rule"></div>
-    <p class="sec-desc" style="max-width:540px;margin:0 auto;">Skilled professionals committed to continuity, excellence, and lasting client relationships.</p>
+  <div class="u-center rv" style="margin-bottom:64px;">
+    <span class="u-tag">The People Behind the Work</span>
+    <h2 class="u-h2">Our <i>Team</i></h2>
+    <div class="u-rule"></div>
+    <p class="u-lead" style="max-width:580px;margin:0 auto;">Skilled professionals committed to continuity, excellence, and lasting relationships with every client we serve.</p>
   </div>
   <div class="team-wrap">
-    <div class="team-lead-card reveal d1">
-      <div class="tl-avatar">P</div>
+    <div class="tl-card rv d1">
+      <div class="tl-av">P</div>
       <h3>Prabha. G</h3>
       <span class="tl-role">Proprietrix &amp; Principal CA</span>
-      <p class="tl-bio">B.Com · FCA · DISA (ICA)<br>Certified in Forensic Audit<br><br>21+ years of experience with large Group Companies at Chennai. Expert in Internal &amp; Statutory Audit and Systems Audit for Banks and NBFIs.</p>
-      <p style="font-size:13px;color:var(--gold);margin-bottom:18px;">📞 <a href="tel:+919003254592" style="color:var(--gold);text-decoration:none;">90032 54592</a></p>
+      <p class="tl-bio">B.Com · FCA · DISA (ICA) · Certified in Forensic Audit<br><br>Over 21 years of experience with large Group Companies at Chennai. Expert in Internal &amp; Statutory Audit, ROC formalities, and Systems Audit for Banks and NBFIs.</p>
+      <p class="tl-phone">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="#b07d2e" style="vertical-align:-3px;margin-right:7px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <a href="tel:+919003254592">90032 54592</a>
+      </p>
       <div class="tl-certs">
         <span class="tl-cert">FCA</span>
         <span class="tl-cert">DISA</span>
@@ -474,81 +900,97 @@ footer{background:var(--navy);border-top:3px solid var(--gold);padding:48px 56px
         <span class="tl-cert">Systems Auditor</span>
       </div>
     </div>
-    <div class="team-right reveal d2">
-      <span class="sec-tag">Team Strength</span>
-      <h2>Built for <span>Quality</span> &amp; Continuity</h2>
-      <div class="sec-rule"></div>
-      <p class="sec-desc">People make the difference in any professional relationship. The quality of our service is embodied in the skills and commitment of our team. We maintain staff continuity — keeping the same team on your account is key to productivity and strong client relationships.</p>
-      <div class="network-grid">
-        <div class="net-item">
-          <div class="ni-icon">👥</div>
-          <div><div class="ni-label">In-House Team</div><div class="ni-val">4 Qualified Audit Assistants</div></div>
+    <div class="team-r rv d2">
+      <span class="u-tag">Team Strength</span>
+      <h2 class="u-h2">Built for <i>Quality</i> &amp; Continuity</h2>
+      <div class="u-rule"></div>
+      <p class="u-lead">People make the difference in any professional relationship. The quality of our service is embodied in the skills and commitment of our team. We believe in maintaining staff continuity — keeping the same people on your engagement leads to better productivity and stronger relationships.</p>
+      <div class="net-grid" style="margin-top:36px;">
+        <div class="net-card">
+          <div class="nc-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="1.7" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div><div class="nc-lbl">In-House Team</div><div class="nc-val">4 Qualified Audit Assistants</div></div>
         </div>
-        <div class="net-item">
-          <div class="ni-icon">🗺️</div>
-          <div><div class="ni-label">Outstation Network</div><div class="ni-val">Bangalore · Hyderabad · Tirunelveli · Coimbatore</div></div>
+        <div class="net-card">
+          <div class="nc-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg></div>
+          <div><div class="nc-lbl">Outstation Network</div><div class="nc-val">Bangalore · Hyderabad · Tirunelveli · Coimbatore</div></div>
         </div>
-        <div class="net-item">
-          <div class="ni-icon">🤝</div>
-          <div><div class="ni-label">Professional Allies</div><div class="ni-val">CA Firms · Cost Accountants · Company Secretaries</div></div>
+        <div class="net-card">
+          <div class="nc-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="1.7" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+          <div><div class="nc-lbl">Professional Allies</div><div class="nc-val">CA Firms · Cost Accountants · Company Secretaries</div></div>
         </div>
-        <div class="net-item">
-          <div class="ni-icon">⚖️</div>
-          <div><div class="ni-label">Legal &amp; Technical</div><div class="ni-val">Lawyers · Engineers · Architects</div></div>
+        <div class="net-card">
+          <div class="nc-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="1.7" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div class="nc-lbl">Legal &amp; Technical</div><div class="nc-val">Lawyers · Engineers · Architects</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact" style="padding:0;">
-  <div class="contact-top">
-    <div class="contact-top-inner">
-      <div class="reveal">
-        <span class="sec-tag" style="color:rgba(184,146,58,.7);">Get In Touch</span>
-        <h2>Let's <span>Connect</span></h2>
-        <div class="sec-rule"></div>
-        <p class="ct-desc">We welcome enquiries from prospective clients across all business categories. Our team is ready to provide expert guidance tailored to your specific requirements.</p>
+<!-- ════════════════ CONTACT ════════════════ -->
+<section id="contact">
+  <div class="contact-banner">
+    <div class="cb-inner">
+      <div class="rv">
+        <span class="u-tag" style="color:rgba(176,125,46,.8);">Get In Touch</span>
+        <h2 class="u-h2" style="color:#fff;">Let's <i>Connect</i></h2>
+        <div class="u-rule"></div>
+        <p class="u-lead" style="color:rgba(255,255,255,.5);">We welcome enquiries from clients across all business categories. Our team is ready to provide expert, personalised guidance.</p>
       </div>
-      <div class="contact-details reveal d2">
-        <div class="cd-item">
-          <div class="cd-icon">📍</div>
-          <div><div class="cd-label">Office Address</div><div class="cd-val">Vijay Vishnu Apartments, No.169, F 2,<br>15th Sector, 94th Street, K.K. Nagar,<br>Chennai – 600 078</div></div>
+      <div class="cd-rows rv d2">
+        <div class="cd-row">
+          <div class="cd-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="2.2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="cd-info">
+            <span class="cd-lbl">Office</span>
+            <p>Vijay Vishnu Apartments, No.169, F 2,<br>15th Sector, 94th Street, K.K. Nagar,<br>Chennai – 600 078</p>
+          </div>
         </div>
-        <div class="cd-item">
-          <div class="cd-icon">📞</div>
-          <div><div class="cd-label">Phone</div><div class="cd-val"><a href="tel:+914424810081">044 – 2481 0081</a><a href="tel:+919003254592">+91 90032 54592 (Mobile)</a></div></div>
+        <div class="cd-row">
+          <div class="cd-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="#b07d2e"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+          <div class="cd-info">
+            <span class="cd-lbl">Phone</span>
+            <a href="tel:+914424810081">044 – 2481 0081</a>
+            <a href="tel:+919003254592">+91 90032 54592 (Mobile)</a>
+          </div>
         </div>
-        <div class="cd-item">
-          <div class="cd-icon">✉️</div>
-          <div><div class="cd-label">Email</div><div class="cd-val"><a href="mailto:govindprabhaca@gmail.com">govindprabhaca@gmail.com</a><a href="mailto:plassociateschennai78@gmail.com">plassociateschennai78@gmail.com</a></div></div>
+        <div class="cd-row">
+          <div class="cd-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b07d2e" stroke-width="2.2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="cd-info">
+            <span class="cd-lbl">Email</span>
+            <a href="mailto:govindprabhaca@gmail.com">govindprabhaca@gmail.com</a>
+            <a href="mailto:plassociateschennai78@gmail.com">plassociateschennai78@gmail.com</a>
+          </div>
         </div>
-        <div class="cd-item">
-          <div class="cd-icon">💬</div>
-          <div><div class="cd-label">WhatsApp</div><div class="cd-val"><a href="https://wa.me/919003254592" target="_blank">+91 90032 54592 — Tap to Chat</a></div></div>
+        <div class="cd-row">
+          <div class="cd-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.103 1.524 5.836L.057 23.715c-.077.286.212.553.494.458l5.787-1.842A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.102-1.43l-.366-.217-3.791 1.207 1.159-3.896-.237-.388A9.794 9.794 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg></div>
+          <div class="cd-info">
+            <span class="cd-lbl">WhatsApp</span>
+            <a href="https://wa.me/919003254592" target="_blank">+91 90032 54592 — Tap to Chat</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="contact-form-section">
-    <div class="cfs-inner">
-      <div class="reveal">
-        <div class="form-header">
-          <h3>Quick Connect</h3>
-          <p>Reach us instantly via WhatsApp or email. We respond promptly to all enquiries.</p>
+
+  <div class="contact-form-area">
+    <div class="cfa-inner">
+      <div class="rv">
+        <div class="qc-head">
+          <h3>Write to Us</h3>
+          <p>Choose how you'd like to reach us. We respond quickly to all enquiries.</p>
         </div>
-        <a href="https://wa.me/919003254592?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" class="wa-big-btn">
-          <div class="wa-icon">📱</div>
+        <a class="wa-link" href="https://wa.me/919003254592?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.103 1.524 5.836L.057 23.715c-.077.286.212.553.494.458l5.787-1.842A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.102-1.43l-.366-.217-3.791 1.207 1.159-3.896-.237-.388A9.794 9.794 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
           <div><strong>Chat on WhatsApp</strong><span>+91 90032 54592 — instant reply</span></div>
         </a>
-        <a href="mailto:govindprabhaca@gmail.com" class="email-big-btn">
-          <div class="em-icon">✉️</div>
+        <a class="em-link" href="mailto:govindprabhaca@gmail.com">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <div><strong>Send an Email</strong><span>govindprabhaca@gmail.com</span></div>
         </a>
       </div>
-      <div class="reveal d2">
+      <div class="rv d2">
         <div class="fg"><label>Your Name</label><input type="text" id="fn" placeholder="Full Name"></div>
-        <div class="fg"><label>Email Address</label><input type="email" id="fe" placeholder="your@email.com"></div>
+        <div class="fg"><label>Email</label><input type="email" id="fe" placeholder="your@email.com"></div>
         <div class="fg">
           <label>Service Required</label>
           <select id="fs">
@@ -559,75 +1001,112 @@ footer{background:var(--navy);border-top:3px solid var(--gold);padding:48px 56px
             <option>Foreign Exchange (FEMA)</option>
             <option>Accounting Services</option>
             <option>Systems / Forensic Audit</option>
-            <option>Other</option>
+            <option>General Enquiry</option>
           </select>
         </div>
-        <div class="fg"><label>Message</label><textarea id="fm" rows="4" placeholder="Brief description of your requirement…"></textarea></div>
-        <div class="form-actions">
-          <button class="f-btn-wa" onclick="sendWA()">📱 WhatsApp</button>
-          <button class="f-btn-em" onclick="sendEmail()">✉️ Email</button>
+        <div class="fg"><label>Message</label><textarea id="fm" rows="4" placeholder="Describe your requirement…"></textarea></div>
+        <div class="form-btns">
+          <button class="fb-wa" onclick="sendWA()">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="white" style="vertical-align:-3px;margin-right:8px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.103 1.524 5.836L.057 23.715c-.077.286.212.553.494.458l5.787-1.842A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.102-1.43l-.366-.217-3.791 1.207 1.159-3.896-.237-.388A9.794 9.794 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+            WhatsApp
+          </button>
+          <button class="fb-em" onclick="sendEmail()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" style="vertical-align:-2px;margin-right:8px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email
+          </button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ════════════════ FOOTER ════════════════ -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <h3>P.L. & Associates</h3>
-        <span class="fb-role">Chartered Accountants · Chennai</span>
-        <p>Delivering financial excellence with integrity since 1995. Vijay Vishnu Apartments, No.169, F 2, 15th Sector, 94th Street, K.K. Nagar, Chennai – 600 078.</p>
+  <div class="foot-main">
+    <div class="fb-brand">
+      <div class="fb-logo-row">
+        <!-- CA India logo — footer version -->
+        <svg width="68" height="50" viewBox="0 0 80 58" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 8 29 C 8 14 17 6 29 6 C 35 6 40 8.5 43.5 12.5 L 37 18 C 34.5 15 32 13.5 29 13.5 C 21 13.5 16 20 16 29 C 16 38 21 44.5 29 44.5 C 32.5 44.5 35.5 43 38 40 L 44.5 45.5 C 40.5 49.5 35.5 52 29 52 C 17 52 8 44 8 29 Z" fill="#5599cc"/>
+          <path d="M 47 51 L 58 8 L 69 8 L 80 51 L 72 51 L 70 43 L 57 43 L 55 51 Z M 59 36 L 71 36 L 65 14 Z" fill="#5599cc"/>
+          <path d="M 34 4 L 72 4 L 68 12 L 30 12 Z" fill="#FF9933" opacity="0.95"/>
+          <path d="M 30 12 L 68 12 L 64 20 L 26 20 Z" fill="rgba(255,255,255,0.7)" opacity="0.9"/>
+          <path d="M 26 20 L 64 20 L 60 28 L 22 28 Z" fill="#138808" opacity="0.95"/>
+        </svg>
+        <div class="fb-name">
+          <strong>P.L. &amp; Associates</strong>
+          <em>Chartered Accountants · Chennai</em>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="#services">Income Tax Matters</a>
-        <a href="#services">Company Law</a>
-        <a href="#services">Statutory Audit</a>
-        <a href="#services">Foreign Exchange</a>
-        <a href="#services">Accounting Services</a>
-        <a href="#services">Systems Audit</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="tel:+914424810081">044 – 2481 0081</a>
-        <a href="tel:+919003254592">+91 90032 54592</a>
-        <a href="mailto:govindprabhaca@gmail.com">govindprabhaca@gmail.com</a>
-        <a href="https://wa.me/919003254592" target="_blank">WhatsApp Us</a>
-      </div>
+      <p class="fb-addr">Vijay Vishnu Apartments, No.169, F 2,<br>15th Sector, 94th Street, K.K. Nagar,<br>Chennai – 600 078<br><br>Tel: 044 – 2481 0081 &nbsp;|&nbsp; Mob: +91 90032 54592<br>govindprabhaca@gmail.com · plassociateschennai78@gmail.com</p>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 P.L. & Associates. All Rights Reserved.</p>
-      <div class="icai-badge">🏛 ICAI Registered · Peer Reviewed 2008 &amp; 2013</div>
-      <p>K.K. Nagar, Chennai – 600 078</p>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <a href="#services">Income Tax Matters</a>
+      <a href="#services">Company Law</a>
+      <a href="#services">Statutory &amp; Internal Audit</a>
+      <a href="#services">Foreign Exchange (FEMA)</a>
+      <a href="#services">Accounting Services</a>
+      <a href="#services">Systems &amp; Forensic Audit</a>
     </div>
+    <div class="foot-col">
+      <h4>Reach Us</h4>
+      <a href="tel:+914424810081">044 – 2481 0081</a>
+      <a href="tel:+919003254592">+91 90032 54592</a>
+      <a href="mailto:govindprabhaca@gmail.com">govindprabhaca@gmail.com</a>
+      <a href="https://wa.me/919003254592" target="_blank" style="color:#4cd97b;">WhatsApp Us</a>
+      <p style="margin-top:16px;color:rgba(255,255,255,.2);">K.K. Nagar, Chennai – 600 078</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2025 P.L. &amp; Associates. All Rights Reserved.</p>
+    <div class="icai-pill">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      ICAI Registered · Peer Reviewed 2008 &amp; 2013
+    </div>
+    <p>Established 1995 · 30+ Years of Excellence</p>
   </div>
 </footer>
 
-<div class="float-group">
-  <a class="flt flt-wa" href="https://wa.me/919003254592?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20P.L.%20%26%20Associates." target="_blank" title="WhatsApp">📱</a>
-  <a class="flt flt-em" href="mailto:govindprabhaca@gmail.com" title="Email">✉️</a>
+<!-- ════════════════ FLOATING BUTTONS ════════════════ -->
+<div class="floats">
+  <a class="fl fl-w" href="https://wa.me/919003254592?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20P.L.%20%26%20Associates." target="_blank" title="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.103 1.524 5.836L.057 23.715c-.077.286.212.553.494.458l5.787-1.842A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.102-1.43l-.366-.217-3.791 1.207 1.159-3.896-.237-.388A9.794 9.794 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+  </a>
+  <a class="fl fl-e" href="mailto:govindprabhaca@gmail.com" title="Send Email">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  </a>
 </div>
 
 <script>
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');}),{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
 function sendWA(){
-  const n=document.getElementById('fn').value.trim();
-  const s=document.getElementById('fs').value;
-  const m=document.getElementById('fm').value.trim();
-  const txt=encodeURIComponent('Hello P.L. & Associates,\n\nName: '+(n||'Not provided')+'\nService: '+(s||'General Enquiry')+'\nMessage: '+(m||'N/A'));
-  window.open('https://wa.me/919003254592?text='+txt,'_blank');
+  const n = document.getElementById('fn').value.trim();
+  const s = document.getElementById('fs').value;
+  const m = document.getElementById('fm').value.trim();
+  const t = encodeURIComponent(
+    'Hello P.L. & Associates,\n\nName: ' + (n||'Not provided') +
+    '\nService: ' + (s||'General Enquiry') +
+    '\nMessage: ' + (m||'N/A')
+  );
+  window.open('https://wa.me/919003254592?text=' + t, '_blank');
 }
 function sendEmail(){
-  const n=document.getElementById('fn').value.trim();
-  const e=document.getElementById('fe').value.trim();
-  const s=document.getElementById('fs').value;
-  const m=document.getElementById('fm').value.trim();
-  const sub=encodeURIComponent('Enquiry: '+(s||'General')+' — '+n);
-  const body=encodeURIComponent('Dear P.L. & Associates,\n\nName: '+n+'\nEmail: '+e+'\nService: '+s+'\n\nMessage:\n'+m+'\n\nRegards,\n'+n);
-  window.location.href='mailto:govindprabhaca@gmail.com?subject='+sub+'&body='+body;
+  const n = document.getElementById('fn').value.trim();
+  const e = document.getElementById('fe').value.trim();
+  const s = document.getElementById('fs').value;
+  const m = document.getElementById('fm').value.trim();
+  const sub = encodeURIComponent('Enquiry: ' + (s||'General') + ' — ' + n);
+  const body = encodeURIComponent(
+    'Dear P.L. & Associates,\n\nName: ' + n +
+    '\nEmail: ' + e + '\nService: ' + s +
+    '\n\nMessage:\n' + m + '\n\nRegards,\n' + n
+  );
+  window.location.href = 'mailto:govindprabhaca@gmail.com?subject=' + sub + '&body=' + body;
 }
 </script>
 </body>
