@@ -1,50 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!-- ================= SEO ================= -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>P.L. & Associates – Chartered Accountants</title>
 
+<title>P.L. & Associates | Chartered Accountants in Chennai</title>
+
+<meta name="description" content="P.L. & Associates – Leading Chartered Accountants in Chennai with 30+ years expertise in Audit, Tax, FEMA, and Advisory services.">
+<meta name="keywords" content="Chartered Accountant Chennai, Audit firm Chennai, Tax consultant Chennai, FEMA consultant India">
+<meta name="author" content="P.L. & Associates">
+
+<!-- Open Graph -->
+<meta property="og:title" content="P.L. & Associates">
+<meta property="og:description" content="Trusted Chartered Accountants since 1995">
+<meta property="og:type" content="website">
+
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
 
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 <style>
+
+/* ================= ROOT ================= */
 :root{
 --navy:#0d2240;
 --gold:#b8923a;
+--light:#f7f6f2;
 --text:#222;
 --muted:#666;
---bg:#f7f6f2;
 }
 
 body{
-font-family:'Outfit',sans-serif;
 margin:0;
-font-size:17px; /* increased */
+font-family:'Outfit',sans-serif;
+font-size:18px;
 line-height:1.8;
 color:var(--text);
 }
 
-h1,h2,h3{
-font-family:'Cormorant Garamond',serif;
-}
-
+/* ================= NAV ================= */
 nav{
+position:fixed;
+top:0;
+width:100%;
+background:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 50px;
-background:#fff;
-border-bottom:1px solid #ddd;
+padding:18px 60px;
+border-bottom:1px solid #eee;
+z-index:1000;
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:12px;
+gap:10px;
 }
 
 .logo img{
-height:48px;
+height:45px;
 }
 
 nav a{
@@ -54,41 +73,39 @@ color:#333;
 font-size:16px;
 }
 
+/* ================= HERO ================= */
 .hero{
+height:100vh;
 display:flex;
-padding:80px 60px;
-background:var(--bg);
 align-items:center;
-gap:50px;
-}
-
-.hero img{
-width:50%;
-border-radius:10px;
+justify-content:space-between;
+padding:0 60px;
+background:linear-gradient(to right,var(--light),white);
 }
 
 .hero h1{
-font-size:56px;
-margin-bottom:10px;
+font-size:64px;
+font-family:'Cormorant Garamond';
 }
 
 .hero p{
-font-size:19px;
+font-size:20px;
 color:var(--muted);
+max-width:500px;
 }
 
 .btn{
 background:var(--navy);
-color:#fff;
-padding:14px 28px;
+color:white;
+padding:16px 30px;
 text-decoration:none;
 display:inline-block;
 margin-top:20px;
-font-size:16px;
 }
 
+/* ================= SERVICES ================= */
 .section{
-padding:70px 60px;
+padding:100px 60px;
 }
 
 .services{
@@ -98,74 +115,97 @@ gap:30px;
 }
 
 .card{
-background:#fff;
+background:white;
 border:1px solid #ddd;
-border-radius:10px;
+border-radius:12px;
 overflow:hidden;
-transition:.3s;
+transition:.4s;
 }
 
 .card img{
 width:100%;
-height:180px;
+height:200px;
 object-fit:cover;
 }
 
 .card-content{
-padding:20px;
+padding:25px;
 }
 
 .card h3{
-font-size:22px;
-margin-bottom:10px;
+font-size:24px;
 }
 
 .card p{
-font-size:16px;
 color:var(--muted);
 }
 
 .card:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.1);
 }
 
+/* ================= CTA ================= */
+.cta{
+background:var(--navy);
+color:white;
+text-align:center;
+padding:80px 40px;
+}
+
+.cta h2{
+font-size:40px;
+}
+
+/* ================= FORM ================= */
+.form{
+max-width:600px;
+margin:auto;
+}
+
+input,select,textarea{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:1px solid #ddd;
+font-size:16px;
+}
+
+button{
+background:var(--gold);
+color:white;
+padding:15px;
+border:none;
+width:100%;
+font-size:18px;
+cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
 footer{
 background:var(--navy);
-color:#fff;
+color:white;
 padding:40px 60px;
-margin-top:40px;
+text-align:center;
 }
 
-.footer-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.footer-logo{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.footer-logo img{
-height:42px;
-}
-
+/* ================= MOBILE ================= */
 @media(max-width:900px){
 .hero{
 flex-direction:column;
+text-align:center;
 }
 .services{
 grid-template-columns:1fr;
 }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- ================= NAV ================= -->
 <nav>
 <div class="logo">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Institute_of_Chartered_Accountants_of_India_logo.svg/512px-Institute_of_Chartered_Accountants_of_India_logo.svg.png">
@@ -179,86 +219,119 @@ grid-template-columns:1fr;
 </div>
 </nav>
 
+<!-- ================= HERO ================= -->
 <section class="hero">
-<div>
+<div data-aos="fade-up">
 <h1>Chartered Accountants</h1>
-<p>30+ years of excellence in Audit, Taxation, and Financial Advisory. Trusted by corporates, banks, and institutions across India.</p>
-<a class="btn" href="#">Enquire Now</a>
+<p>30+ years of excellence in Audit, Taxation, and Advisory. Trusted by corporates and banks across India.</p>
+<a href="#contact" class="btn">Get Consultation</a>
 </div>
 
-<img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f">
+<img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f" width="500" data-aos="fade-left">
 </section>
 
+<!-- ================= SERVICES ================= -->
 <section class="section">
-<h2>Our Services</h2>
+<h2 data-aos="fade-up">Our Services</h2>
 
 <div class="services">
 
-<div class="card">
+<div class="card" data-aos="fade-up">
 <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85">
 <div class="card-content">
 <h3>Income Tax</h3>
-<p>Comprehensive tax planning, filing, and compliance services for individuals and corporates.</p>
+<p>Tax planning, filing, and litigation support.</p>
 </div>
 </div>
 
-<div class="card">
+<div class="card" data-aos="fade-up" data-aos-delay="100">
 <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07">
 <div class="card-content">
-<h3>Audit Services</h3>
-<p>Statutory, internal, and bank audits with complete regulatory compliance.</p>
+<h3>Audit</h3>
+<p>Statutory, internal, and bank audits.</p>
 </div>
 </div>
 
-<div class="card">
+<div class="card" data-aos="fade-up" data-aos-delay="200">
 <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43">
 <div class="card-content">
 <h3>Company Law</h3>
-<p>Incorporation, ROC filings, and complete corporate compliance support.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1581091215367-59ab6b7f9b8d">
-<div class="card-content">
-<h3>Accounting</h3>
-<p>Bookkeeping, MIS reporting, and financial statement preparation.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-<div class="card-content">
-<h3>FEMA</h3>
-<p>Foreign exchange compliance, RBI approvals, and FDI advisory.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4">
-<div class="card-content">
-<h3>Advisory</h3>
-<p>Systems audit, forensic audit, and financial consulting services.</p>
+<p>ROC filings and compliance services.</p>
 </div>
 </div>
 
 </div>
 </section>
 
+<!-- ================= CTA ================= -->
+<section class="cta" data-aos="zoom-in">
+<h2>Need Expert Financial Advice?</h2>
+<p>Talk to our Chartered Accountants today</p>
+<a href="#contact" class="btn">Book Consultation</a>
+</section>
+
+<!-- ================= CONTACT / CRM ================= -->
+<section class="section" id="contact">
+<h2 data-aos="fade-up">Contact Us</h2>
+
+<div class="form" data-aos="fade-up">
+
+<form id="leadForm">
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email" required>
+
+<select required>
+<option>Service Required</option>
+<option>Audit</option>
+<option>Tax</option>
+<option>Company Law</option>
+</select>
+
+<textarea placeholder="Message"></textarea>
+
+<button type="submit">Submit Enquiry</button>
+
+</form>
+
+</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
 <footer>
-<div class="footer-top">
-
-<div class="footer-logo">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Institute_of_Chartered_Accountants_of_India_logo.svg/512px-Institute_of_Chartered_Accountants_of_India_logo.svg.png">
-<span>P.L. & Associates</span>
-</div>
-
-<div>
-© 2026 All Rights Reserved
-</div>
-
-</div>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Institute_of_Chartered_Accountants_of_India_logo.svg/512px-Institute_of_Chartered_Accountants_of_India_logo.svg.png" height="40">
+<p>© 2026 P.L. & Associates | Chennai</p>
 </footer>
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+duration:1000,
+once:true
+});
+
+/* ===== CRM INTEGRATION (Google Sheets / API ready) ===== */
+document.getElementById("leadForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+/* Example CRM hook */
+fetch("https://hook.us1.make.com/your-webhook-url", {
+method:"POST",
+headers:{ "Content-Type":"application/json" },
+body:JSON.stringify({
+name:this[0].value,
+email:this[1].value,
+service:this[2].value,
+message:this[3].value
+})
+});
+
+alert("Enquiry submitted successfully!");
+this.reset();
+});
+</script>
 
 </body>
 </html>
