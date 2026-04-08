@@ -1,279 +1,634 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>P.L. & Associates – Chartered Accountants</title>
-
-<meta name="description" content="Chartered Accountants in Chennai with 30+ years expertise in Audit, Tax, and Advisory">
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
-
-<!-- Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-XXXXXXX');
-</script>
-
+<title>P.L. & Associates – Chartered Accountants, Chennai</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-
-/* ===== BASE ===== */
-:root{
---navy:#0d2240;
---gold:#b8923a;
---text:#1a1a1a;
---muted:#666;
+:root {
+  --navy: #0d2240;
+  --navy-mid: #163259;
+  --gold: #b8923a;
+  --gold-light: #d4a84b;
+  --gold-pale: #f5edd8;
+  --white: #ffffff;
+  --off-white: #fafaf8;
+  --light-bg: #f4f2ee;
+  --text: #1a1a1a;
+  --text-mid: #4a4a4a;
+  --text-muted: #7a7a7a;
+  --border: #e2ddd4;
+  --border-strong: #c8c0b4;
 }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:#f0ede8;}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
 
-body{
-margin:0;
-font-family:'Outfit',sans-serif;
-font-size:17.5px;
-line-height:1.9;
-color:var(--text);
-}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 56px;height:72px;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:14px;}
+.nav-seal{width:42px;height:42px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--gold);letter-spacing:-1px;}
+.nav-name strong{display:block;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--navy);line-height:1.2;}
+.nav-name span{font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;font-weight:400;}
+.nav-menu{display:flex;gap:36px;align-items:center;}
+.nav-menu a{text-decoration:none;font-size:13px;color:var(--text-mid);letter-spacing:0.3px;transition:color .25s;font-weight:400;}
+.nav-menu a:hover{color:var(--navy);}
+.nav-btn{background:var(--navy);color:#fff;padding:10px 24px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:500;transition:all .3s;}
+.nav-btn:hover{background:var(--gold);}
 
-/* ===== NAV ===== */
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:#fff;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 60px;
-border-bottom:1px solid #eee;
-z-index:1000;
-}
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:var(--off-white);position:relative;overflow:hidden;padding-top:72px;}
+.hero-left{padding:100px 64px 80px 56px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border);}
+.hero-right{background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:80px 56px;position:relative;overflow:hidden;}
+.hero-right::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 80% 20%,rgba(184,146,58,.08) 0%,transparent 60%);}
+.hero-right-inner{position:relative;z-index:1;}
+.est-badge{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:32px;}
+.est-badge::before,.est-badge::after{content:'';width:24px;height:1px;background:var(--gold);}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,6vw,84px);font-weight:600;line-height:1.0;color:var(--navy);margin-bottom:8px;}
+h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2vw,26px);font-weight:300;letter-spacing:4px;color:var(--text-mid);text-transform:uppercase;margin-bottom:32px;}
+.hero-rule{width:72px;height:2px;background:linear-gradient(to right,var(--gold),transparent);margin-bottom:28px;}
+.hero-desc{font-size:15.5px;line-height:1.85;color:var(--text-mid);max-width:480px;margin-bottom:48px;font-weight:300;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#fff;padding:15px 32px;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;text-decoration:none;transition:all .3s;font-family:'Outfit',sans-serif;}
+.btn-gold:hover{background:var(--navy);transform:translateY(-2px);box-shadow:0 8px 28px rgba(13,34,64,.18);}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--navy);color:var(--navy);padding:15px 32px;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;text-decoration:none;transition:all .3s;font-family:'Outfit',sans-serif;}
+.btn-outline:hover{background:var(--navy);color:#fff;}
+.hero-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid rgba(255,255,255,.12);margin-bottom:40px;}
+.hstat{padding:24px 20px;background:rgba(255,255,255,.04);text-align:center;}
+.hstat-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;color:var(--gold);line-height:1;}
+.hstat-lbl{font-size:10.5px;letter-spacing:1.5px;color:rgba(255,255,255,.45);text-transform:uppercase;margin-top:6px;}
+.hero-cards{display:grid;gap:1px;}
+.hcard{padding:22px 24px;border:1px solid rgba(255,255,255,.1);display:flex;gap:16px;align-items:flex-start;transition:border-color .3s;cursor:default;}
+.hcard:hover{border-color:rgba(184,146,58,.5);}
+.hcard-icon{font-size:20px;line-height:1;flex-shrink:0;margin-top:2px;}
+.hcard h4{font-size:13.5px;color:#fff;font-weight:500;margin-bottom:4px;}
+.hcard p{font-size:12px;color:rgba(255,255,255,.45);line-height:1.6;}
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-}
+section{padding:96px 56px;}
+.sec-tag{display:block;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:600;line-height:1.15;color:var(--navy);margin-bottom:16px;}
+h2 span{color:var(--gold);}
+.sec-rule{width:56px;height:2px;background:linear-gradient(to right,var(--gold),var(--border));margin-bottom:28px;}
+.sec-desc{font-size:15px;color:var(--text-muted);line-height:1.8;font-weight:300;}
+.center{text-align:center;}
+.center .sec-rule{margin:0 auto 28px;}
 
-.logo img{
-height:42px;
-}
+#about{background:var(--white);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;max-width:1300px;margin:0 auto;}
+.vision-block{background:var(--navy);padding:52px 44px;position:relative;}
+.vision-block::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:120px;color:var(--gold);opacity:.15;position:absolute;top:-20px;left:28px;line-height:1;}
+.vision-block h3{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;font-weight:400;}
+.vision-block p{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,.85);line-height:1.75;font-style:italic;margin-bottom:28px;}
+.mission-strip{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;}
+.mission-strip h4{font-size:10.5px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.mission-strip p{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.75;font-weight:300;}
+.about-right h2{margin-top:0;}
+.about-para{font-size:14.5px;color:var(--text-mid);line-height:1.9;margin-bottom:20px;font-weight:300;}
+.proprietrix-card{display:flex;gap:22px;padding:28px;border:1px solid var(--border);background:var(--off-white);margin:32px 0;}
+.pr-avatar{width:62px;height:62px;min-width:62px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--gold);}
+.pr-info h4{font-size:16px;color:var(--navy);font-weight:600;margin-bottom:3px;}
+.pr-info .role{font-size:11px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;display:block;}
+.pr-info p{font-size:13px;color:var(--text-muted);line-height:1.7;}
+.cert-chips{display:flex;flex-wrap:wrap;gap:9px;}
+.chip{padding:5px 16px;font-size:11.5px;color:var(--navy);border:1px solid var(--border-strong);letter-spacing:.5px;background:var(--white);}
 
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#333;
-}
+#services{background:var(--light-bg);}
+.services-header{max-width:600px;margin:0 auto 56px;text-align:center;}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);max-width:1300px;margin:0 auto;}
+.srv-card{padding:44px 36px;background:var(--white);border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:all .35s;cursor:default;position:relative;}
+.srv-card:hover{background:var(--navy);z-index:1;box-shadow:0 16px 48px rgba(13,34,64,.18);}
+.srv-num{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:20px;display:block;font-weight:400;}
+.srv-icon{font-size:28px;margin-bottom:18px;display:block;}
+.srv-card h3{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.2;transition:color .35s;}
+.srv-card:hover h3{color:#fff;}
+.srv-card p{font-size:13px;color:var(--text-muted);line-height:1.75;margin-bottom:20px;transition:color .35s;}
+.srv-card:hover p{color:rgba(255,255,255,.55);}
+.srv-list{list-style:none;}
+.srv-list li{font-size:12.5px;color:var(--text-muted);padding:5px 0 5px 16px;position:relative;line-height:1.55;transition:color .35s;}
+.srv-list li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:1px;background:var(--gold);}
+.srv-card:hover .srv-list li{color:rgba(255,255,255,.5);}
+.srv-bottom-bar{grid-column:1/-1;background:var(--navy);padding:32px 36px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.srv-bottom-bar p{font-size:14px;color:rgba(255,255,255,.65);font-weight:300;}
+.srv-bottom-bar a{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-size:13px;letter-spacing:1px;text-decoration:none;text-transform:uppercase;font-weight:500;}
 
-/* ===== HERO ===== */
-.hero{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:120px 60px 60px;
-background:#f7f6f2;
-}
+#clients{background:var(--white);}
+.clients-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1200px;margin:48px auto 0;}
+.cli-card{padding:36px 32px;border:1px solid var(--border);display:flex;gap:20px;align-items:flex-start;transition:all .3s;}
+.cli-card:hover{border-color:var(--gold);background:var(--off-white);}
+.cli-icon{width:50px;height:50px;min-width:50px;background:var(--light-bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:22px;}
+.cli-card h4{font-size:15.5px;color:var(--navy);font-weight:600;margin-bottom:8px;}
+.cli-card p{font-size:13px;color:var(--text-muted);line-height:1.75;}
+.peer-review-bar{background:var(--navy);display:flex;align-items:center;justify-content:center;gap:48px;padding:36px 56px;flex-wrap:wrap;margin-top:56px;}
+.pr-item{text-align:center;}
+.pr-item .pr-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:var(--gold);line-height:1;}
+.pr-item .pr-lbl{font-size:11px;letter-spacing:1.5px;color:rgba(255,255,255,.45);text-transform:uppercase;margin-top:4px;}
+.pr-divider{width:1px;background:rgba(255,255,255,.1);height:48px;}
 
-.hero h1{
-font-family:'Cormorant Garamond';
-font-size:64px;
-}
+#team{background:var(--light-bg);}
+.team-wrap{display:grid;grid-template-columns:380px 1fr;gap:72px;align-items:start;max-width:1200px;margin:0 auto;}
+.team-lead-card{background:var(--white);border:1px solid var(--border);text-align:center;padding:52px 36px;position:relative;}
+.team-lead-card::before{content:'';position:absolute;top:0;left:20%;right:20%;height:3px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.tl-avatar{width:96px;height:96px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:var(--gold);margin:0 auto 22px;}
+.team-lead-card h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--navy);font-weight:600;margin-bottom:4px;}
+.tl-role{font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:20px;}
+.tl-bio{font-size:13.5px;color:var(--text-muted);line-height:1.75;margin-bottom:22px;}
+.tl-certs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.tl-cert{padding:5px 14px;background:var(--light-bg);border:1px solid var(--border);font-size:11.5px;color:var(--navy);letter-spacing:.5px;}
+.team-right h2{text-align:left;}
+.team-right .sec-rule{margin-left:0;}
+.team-right .sec-desc{margin-bottom:32px;}
+.network-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;}
+.net-item{padding:20px 22px;border:1px solid var(--border);background:var(--white);display:flex;align-items:flex-start;gap:14px;}
+.net-item .ni-icon{font-size:20px;flex-shrink:0;}
+.ni-label{font-size:11px;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;}
+.ni-val{font-size:13px;color:var(--navy);font-weight:500;}
 
-.hero p{
-font-size:19px;
-color:var(--muted);
-}
+#contact{background:var(--white);padding:0;}
+.contact-top{background:var(--navy);padding:80px 56px 64px;}
+.contact-top-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.contact-top h2{color:#fff;}
+.contact-top h2 span{color:var(--gold);}
+.ct-desc{font-size:15px;color:rgba(255,255,255,.55);line-height:1.85;margin-top:20px;font-weight:300;}
+.contact-details{display:flex;flex-direction:column;gap:0;}
+.cd-item{display:flex;gap:18px;align-items:flex-start;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.cd-item:last-child{border-bottom:none;}
+.cd-icon{width:40px;height:40px;min-width:40px;background:rgba(184,146,58,.15);border:1px solid rgba(184,146,58,.3);display:flex;align-items:center;justify-content:center;font-size:16px;}
+.cd-label{font-size:10.5px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
+.cd-val{font-size:14px;color:rgba(255,255,255,.75);}
+.cd-val a{color:rgba(255,255,255,.75);text-decoration:none;transition:color .25s;display:block;}
+.cd-val a:hover{color:var(--gold);}
+.contact-form-section{padding:64px 56px;background:var(--off-white);}
+.cfs-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;max-width:1200px;margin:0 auto;}
+.form-header h3{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--navy);font-weight:600;margin-bottom:10px;}
+.form-header p{font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:32px;}
+.wa-big-btn{display:flex;align-items:center;gap:16px;background:#25d366;color:#fff;padding:18px 28px;text-decoration:none;margin-bottom:12px;transition:all .3s;}
+.wa-big-btn:hover{background:#1ebe5d;transform:translateX(4px);}
+.wa-big-btn .wa-icon{font-size:24px;}
+.wa-big-btn div strong{display:block;font-size:15px;font-weight:600;}
+.wa-big-btn div span{font-size:12px;opacity:.85;}
+.email-big-btn{display:flex;align-items:center;gap:16px;border:1.5px solid var(--navy);color:var(--navy);padding:18px 28px;text-decoration:none;transition:all .3s;}
+.email-big-btn:hover{background:var(--navy);color:#fff;}
+.email-big-btn .em-icon{font-size:22px;}
+.email-big-btn div strong{display:block;font-size:15px;font-weight:600;}
+.email-big-btn div span{font-size:12px;opacity:.65;}
+.fg{margin-bottom:18px;}
+.fg label{display:block;font-size:11px;letter-spacing:1.5px;color:var(--text-muted);text-transform:uppercase;margin-bottom:7px;font-weight:500;}
+.fg input,.fg select,.fg textarea{width:100%;padding:13px 16px;border:1px solid var(--border);background:var(--white);color:var(--text);font-size:14px;font-family:'Outfit',sans-serif;outline:none;transition:border-color .25s;resize:none;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);}
+.fg select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%23b8923a'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;cursor:pointer;}
+.form-actions{display:flex;gap:12px;margin-top:24px;}
+.f-btn-wa{flex:1;background:#25d366;color:#fff;padding:15px;font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:600;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .3s;}
+.f-btn-wa:hover{background:#1ebe5d;}
+.f-btn-em{flex:1;background:var(--navy);color:#fff;padding:15px;font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:600;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .3s;}
+.f-btn-em:hover{background:var(--gold);}
 
-.btn{
-background:var(--navy);
-color:#fff;
-padding:14px 28px;
-text-decoration:none;
-display:inline-block;
-margin-top:20px;
-}
+footer{background:var(--navy);border-top:3px solid var(--gold);padding:48px 56px 36px;}
+.footer-inner{max-width:1300px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);}
+.footer-brand h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;font-weight:600;margin-bottom:4px;}
+.footer-brand .fb-role{font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;display:block;}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.8;}
+.footer-col h4{font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;font-weight:500;}
+.footer-col a,.footer-col p{display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:10px;transition:color .25s;line-height:1.6;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.3);}
+.icai-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border:1px solid rgba(184,146,58,.3);font-size:11px;color:rgba(184,146,58,.7);letter-spacing:1px;}
 
-/* ===== SERVICES ===== */
-.section{
-padding:80px 60px;
-}
+.float-group{position:fixed;bottom:28px;right:28px;z-index:300;display:flex;flex-direction:column;gap:10px;}
+.flt{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;transition:all .3s;cursor:pointer;}
+.flt-wa{background:#25d366;box-shadow:0 4px 20px rgba(37,211,102,.35);animation:wa-pulse 2.5s infinite;}
+.flt-wa:hover{transform:scale(1.1);animation:none;box-shadow:0 6px 28px rgba(37,211,102,.55);}
+.flt-em{background:var(--navy);box-shadow:0 4px 20px rgba(13,34,64,.35);}
+.flt-em:hover{transform:scale(1.1);background:var(--gold);}
+@keyframes wa-pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.35);}50%{box-shadow:0 4px 28px rgba(37,211,102,.6),0 0 0 7px rgba(37,211,102,.1);}}
 
-.services{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s;}
+.reveal.in{opacity:1;transform:none;}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}.d5{transition-delay:.5s;}
 
-.card{
-border:1px solid #ddd;
-border-radius:10px;
-overflow:hidden;
-background:#fff;
-transition:.4s;
+@media(max-width:960px){
+  nav{padding:0 24px;}
+  .nav-menu{display:none;}
+  #hero{grid-template-columns:1fr;}
+  .hero-left{padding:80px 24px 56px;}
+  .hero-right{padding:56px 24px;}
+  section{padding:72px 24px;}
+  .about-grid,.team-wrap,.contact-top-inner,.cfs-inner,.footer-top{grid-template-columns:1fr;gap:40px;}
+  .srv-grid{grid-template-columns:1fr;}
+  .clients-grid{grid-template-columns:1fr;}
+  .network-grid{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .peer-review-bar{gap:24px;padding:36px 24px;}
+  .contact-form-section{padding:48px 24px;}
 }
-
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
-}
-
-.card-content{
-padding:20px;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 20px 40px rgba(0,0,0,0.08);
-}
-
-/* ===== ANIMATION ===== */
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:.8s ease;
-}
-.reveal.in{
-opacity:1;
-transform:none;
-}
-
-/* ===== POPUP ===== */
-.popup{
-position:fixed;
-bottom:30px;
-right:30px;
-width:300px;
-background:#fff;
-border:1px solid #ddd;
-padding:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
-display:none;
-}
-
-/* ===== FOOTER ===== */
-footer{
-background:var(--navy);
-color:#fff;
-text-align:center;
-padding:40px;
-margin-top:40px;
-}
-
 </style>
 </head>
-
 <body>
 
-<!-- NAV -->
 <nav>
-<div class="logo">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Institute_of_Chartered_Accountants_of_India_logo.svg/512px-Institute_of_Chartered_Accountants_of_India_logo.svg.png">
-<strong>P.L. & Associates</strong>
-</div>
-
-<div>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</div>
+  <div class="nav-brand">
+    <div class="nav-seal">PL</div>
+    <div class="nav-name">
+      <strong>P.L. & Associates</strong>
+      <span>Chartered Accountants</span>
+    </div>
+  </div>
+  <div class="nav-menu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#clients">Clientele</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="https://wa.me/919003254592?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" class="nav-btn">Enquire Now</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-<div class="reveal">
-<h1>Chartered Accountants</h1>
-<p>30+ years of excellence in Audit, Taxation, and Advisory services.</p>
-<a href="#contact" class="btn">Get Consultation</a>
-</div>
-
-<img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f" width="450" loading="lazy">
+<section id="hero">
+  <div class="hero-left">
+    <div class="est-badge">Established 1995 · Chennai</div>
+    <h1>P.L. <em>&</em><br>Associates</h1>
+    <p class="hero-sub">Chartered Accountants</p>
+    <div class="hero-rule"></div>
+    <p class="hero-desc">Thirty years of excellence in Audit, Taxation, Corporate Law, Foreign Exchange, and Financial Advisory. Serving corporates, banks, trusts, and institutions across India — with integrity at the core of every engagement.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/919003254592?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20P.L.%20%26%20Associates%20services." target="_blank" class="btn-gold">📱 WhatsApp Us</a>
+      <a href="#services" class="btn-outline">Our Services ↓</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <div class="hero-stats-row">
+        <div class="hstat"><div class="hstat-num">30<sup style="font-size:20px">+</sup></div><div class="hstat-lbl">Years of Practice</div></div>
+        <div class="hstat"><div class="hstat-num">2×</div><div class="hstat-lbl">Peer Reviewed</div></div>
+        <div class="hstat"><div class="hstat-num">6</div><div class="hstat-lbl">Core Services</div></div>
+      </div>
+      <div class="hero-cards">
+        <div class="hcard"><div class="hcard-icon">⚖️</div><div><h4>Ethical Practice</h4><p>ICAI-registered firm upholding the highest professional standards</p></div></div>
+        <div class="hcard"><div class="hcard-icon">🏦</div><div><h4>Bank Audit Expertise</h4><p>Statutory auditors for Andhra Bank, Central Bank of India &amp; IOB</p></div></div>
+        <div class="hcard"><div class="hcard-icon">🌐</div><div><h4>Pan-India Network</h4><p>CAs in Bangalore, Hyderabad, Tirunelveli &amp; Coimbatore</p></div></div>
+        <div class="hcard"><div class="hcard-icon">🔒</div><div><h4>Systems &amp; Forensic Audit</h4><p>Specialised systems audit for banks &amp; forensic audit certification</p></div></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section" id="services">
-<h2 class="reveal">Our Services</h2>
-
-<div class="services">
-
-<div class="card reveal">
-<img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85" loading="lazy">
-<div class="card-content">
-<h3>Income Tax</h3>
-<p>Planning, filing, and representation.</p>
-</div>
-</div>
-
-<div class="card reveal">
-<img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07" loading="lazy">
-<div class="card-content">
-<h3>Audit</h3>
-<p>Statutory and internal audits.</p>
-</div>
-</div>
-
-<div class="card reveal">
-<img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43" loading="lazy">
-<div class="card-content">
-<h3>Company Law</h3>
-<p>Compliance and ROC services.</p>
-</div>
-</div>
-
-</div>
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="vision-block">
+        <h3>Vision Statement</h3>
+        <p>"To deliver services that enhance client organizational performance and assure all stakeholders a true and fair reflection of financial statements with utmost integrity and commitment to excellence."</p>
+        <div class="mission-strip">
+          <h4>Mission</h4>
+          <p>Provide cost-effective, best-in-quality services to accounting leads that enhance value through supporting the business in managing core &amp; allied accounting activities.</p>
+        </div>
+      </div>
+    </div>
+    <div class="about-right reveal d2">
+      <span class="sec-tag">About The Firm</span>
+      <h2>A Legacy Built on <span>Trust</span></h2>
+      <div class="sec-rule"></div>
+      <p class="about-para">P.L. & Associates was established in 1995 in Chennai as a partnership firm of FCA professionals, now operating as a proprietary organisation. For over three decades, we have rendered quality professional services to a distinguished clientele.</p>
+      <p class="about-para">Our firm has been subject to Peer Review Audit twice — in 2008 and in 2013 — reflecting our commitment to quality. We hold strategic ties with CA firms, Management Consultants, Cost Accountants, Company Secretaries, Lawyers, Engineers, and Architects across India.</p>
+      <div class="proprietrix-card">
+        <div class="pr-avatar">P</div>
+        <div class="pr-info">
+          <h4>Prabha. G</h4>
+          <span class="role">Proprietrix &amp; Principal CA</span>
+          <p>B.Com · FCA · DISA (ICAI) · Certified in Forensic Audit. 21+ years of experience with large Group Companies. Expert in Internal &amp; Statutory Audit, ROC formalities, and Systems Audit for Banks.</p>
+        </div>
+      </div>
+      <div class="cert-chips">
+        <span class="chip">FCA</span>
+        <span class="chip">DISA (ICA)</span>
+        <span class="chip">Forensic Audit Certified</span>
+        <span class="chip">Systems Auditor</span>
+        <span class="chip">ICAI Member</span>
+        <span class="chip">Peer Review Certified Firm</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-<h2 class="reveal">Contact Us</h2>
-
-<input type="text" id="name" placeholder="Your Name">
-<button onclick="sendLead()">Submit</button>
+<section id="services">
+  <div class="services-header reveal">
+    <span class="sec-tag">What We Offer</span>
+    <h2>Our <span>Services</span></h2>
+    <div class="sec-rule" style="margin:0 auto 20px;"></div>
+    <p class="sec-desc">Comprehensive financial, legal, and compliance services — tailored for businesses of every size, from startups to multinationals.</p>
+  </div>
+  <div class="srv-grid">
+    <div class="srv-card reveal d1">
+      <span class="srv-num">01</span>
+      <span class="srv-icon">🧾</span>
+      <h3>Income Tax Matters</h3>
+      <p>End-to-end income tax advisory, computation, filing, and representation.</p>
+      <ul class="srv-list">
+        <li>Tax-efficient investment structuring for individuals &amp; corporates</li>
+        <li>Salary structuring including expatriates</li>
+        <li>ITR filing for companies, firms, trusts &amp; individuals</li>
+        <li>Attending proceedings before AO &amp; Appellate Authorities / ITAT</li>
+      </ul>
+    </div>
+    <div class="srv-card reveal d2">
+      <span class="srv-num">02</span>
+      <span class="srv-icon">🏢</span>
+      <h3>Company Law Matters</h3>
+      <p>Complete corporate compliance and statutory company law support.</p>
+      <ul class="srv-list">
+        <li>Company incorporation; LO/BO/PO registration for foreign entities</li>
+        <li>Board meeting, EGM &amp; AGM minutes and annual returns</li>
+        <li>Formation of Societies and Trusts</li>
+        <li>Charge registration and statutory inspections</li>
+      </ul>
+    </div>
+    <div class="srv-card reveal d3">
+      <span class="srv-num">03</span>
+      <span class="srv-icon">🔍</span>
+      <h3>Statutory &amp; Internal Audit</h3>
+      <p>Independent, thorough audit services across banking and corporate sectors.</p>
+      <ul class="srv-list">
+        <li>Revenue and Stock Audit for nationalised &amp; scheduled banks</li>
+        <li>Statutory and Internal Audits for companies, societies &amp; trusts</li>
+        <li>Fixed asset verification, tagging &amp; reconciliation</li>
+        <li>Third-party confirmations: intercompany, vendor &amp; bank</li>
+      </ul>
+    </div>
+    <div class="srv-card reveal d1">
+      <span class="srv-num">04</span>
+      <span class="srv-icon">🌐</span>
+      <h3>Foreign Exchange (FEMA)</h3>
+      <p>Expert guidance on India's foreign exchange regulations and RBI approvals.</p>
+      <ul class="srv-list">
+        <li>FEMA compliance advisory and certification</li>
+        <li>FDI policy counsel and FIPB investment proposals</li>
+        <li>RBI approvals for share transfer &amp; forex transactions</li>
+        <li>Technology transfer, EPC contracts, foreign currency loans</li>
+      </ul>
+    </div>
+    <div class="srv-card reveal d2">
+      <span class="srv-num">05</span>
+      <span class="srv-icon">📊</span>
+      <h3>Accounting Services</h3>
+      <p>Full-spectrum bookkeeping and accounting management services.</p>
+      <ul class="srv-list">
+        <li>Invoice verification and salary advance monitoring</li>
+        <li>Books of account maintenance per statutory provisions</li>
+        <li>Monthly MIS Reports, Trial Balance &amp; Annual Accounts</li>
+        <li>Bank, vendor &amp; intercompany reconciliations</li>
+      </ul>
+    </div>
+    <div class="srv-card reveal d3">
+      <span class="srv-num">06</span>
+      <span class="srv-icon">💡</span>
+      <h3>Systems Audit &amp; Advisory</h3>
+      <p>Technology-focused audit with forensic and project advisory capabilities.</p>
+      <ul class="srv-list">
+        <li>Systems Audit for bank branches (IOB – 7+ years)</li>
+        <li>ITT Audit for SIRC of ICAI (Dec 2013)</li>
+        <li>Forensic Audits, Due Diligence &amp; Valuations</li>
+        <li>Project reports &amp; loan follow-ups with TIIC, SIDBI</li>
+      </ul>
+    </div>
+    <div class="srv-bottom-bar reveal">
+      <p>Our clientele spans large &amp; medium Indian and multinational companies, government bodies, banks, trusts, societies, and educational institutions.</p>
+      <a href="#contact">Discuss Your Requirements →</a>
+    </div>
+  </div>
 </section>
 
-<!-- POPUP -->
-<div class="popup" id="popup">
-<h4>Need Help?</h4>
-<p>Chat with CA instantly</p>
-<button onclick="openWA()">WhatsApp</button>
-</div>
+<section id="clients">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="center reveal">
+      <span class="sec-tag">Our Track Record</span>
+      <h2>Distinguished <span>Clientele</span></h2>
+      <div class="sec-rule"></div>
+      <p class="sec-desc" style="max-width:580px;margin:0 auto;">Trusted by banks, pharmaceutical companies, manufacturing firms, government institutions, and more.</p>
+    </div>
+    <div class="clients-grid">
+      <div class="cli-card reveal d1">
+        <div class="cli-icon">🏦</div>
+        <div>
+          <h4>Banking Sector Audits</h4>
+          <p>Statutory Auditors for Andhra Bank (5 years), Central Bank of India (3 years), and Indian Overseas Bank (4 years). Search work for IOB, Bharat Overseas Bank, and ABN-Amro Bank.</p>
+        </div>
+      </div>
+      <div class="cli-card reveal d2">
+        <div class="cli-icon">🏭</div>
+        <div>
+          <h4>Corporate &amp; Pharma</h4>
+          <p>Internal Audit for Velvette International Pharma Products and TTK Health Care Ltd. Stock Audits for TTK across Madras, Bangalore, and Cochin.</p>
+        </div>
+      </div>
+      <div class="cli-card reveal d3">
+        <div class="cli-icon">🏗️</div>
+        <div>
+          <h4>Manufacturing &amp; Services</h4>
+          <p>Statutory Auditors for Paint Manufacturing, Fibre Door Manufacturing, Web Design Companies, and Non-Banking Financial Companies.</p>
+        </div>
+      </div>
+      <div class="cli-card reveal d4">
+        <div class="cli-icon">🏛️</div>
+        <div>
+          <h4>Institutions &amp; Government</h4>
+          <p>Serving Government Companies, Trusts, Societies, Non-Public/Regimental Funds, Charitable and Educational Institutions throughout India.</p>
+        </div>
+      </div>
+    </div>
+    <div class="peer-review-bar reveal">
+      <div class="pr-item"><div class="pr-num">1995</div><div class="pr-lbl">Year Established</div></div>
+      <div class="pr-divider"></div>
+      <div class="pr-item"><div class="pr-num">2008</div><div class="pr-lbl">First Peer Review</div></div>
+      <div class="pr-divider"></div>
+      <div class="pr-item"><div class="pr-num">2013</div><div class="pr-lbl">Second Peer Review</div></div>
+      <div class="pr-divider"></div>
+      <div class="pr-item"><div class="pr-num">7+</div><div class="pr-lbl">Years Systems Audit</div></div>
+      <div class="pr-divider"></div>
+      <div class="pr-item"><div class="pr-num">4</div><div class="pr-lbl">Outstation CA Cities</div></div>
+    </div>
+  </div>
+</section>
 
-<!-- FOOTER -->
+<section id="team">
+  <div class="center reveal" style="margin-bottom:56px;">
+    <span class="sec-tag">The People Behind the Work</span>
+    <h2>Our <span>Team</span></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc" style="max-width:540px;margin:0 auto;">Skilled professionals committed to continuity, excellence, and lasting client relationships.</p>
+  </div>
+  <div class="team-wrap">
+    <div class="team-lead-card reveal d1">
+      <div class="tl-avatar">P</div>
+      <h3>Prabha. G</h3>
+      <span class="tl-role">Proprietrix &amp; Principal CA</span>
+      <p class="tl-bio">B.Com · FCA · DISA (ICA)<br>Certified in Forensic Audit<br><br>21+ years of experience with large Group Companies at Chennai. Expert in Internal &amp; Statutory Audit and Systems Audit for Banks and NBFIs.</p>
+      <p style="font-size:13px;color:var(--gold);margin-bottom:18px;">📞 <a href="tel:+919003254592" style="color:var(--gold);text-decoration:none;">90032 54592</a></p>
+      <div class="tl-certs">
+        <span class="tl-cert">FCA</span>
+        <span class="tl-cert">DISA</span>
+        <span class="tl-cert">Forensic Audit</span>
+        <span class="tl-cert">Systems Auditor</span>
+      </div>
+    </div>
+    <div class="team-right reveal d2">
+      <span class="sec-tag">Team Strength</span>
+      <h2>Built for <span>Quality</span> &amp; Continuity</h2>
+      <div class="sec-rule"></div>
+      <p class="sec-desc">People make the difference in any professional relationship. The quality of our service is embodied in the skills and commitment of our team. We maintain staff continuity — keeping the same team on your account is key to productivity and strong client relationships.</p>
+      <div class="network-grid">
+        <div class="net-item">
+          <div class="ni-icon">👥</div>
+          <div><div class="ni-label">In-House Team</div><div class="ni-val">4 Qualified Audit Assistants</div></div>
+        </div>
+        <div class="net-item">
+          <div class="ni-icon">🗺️</div>
+          <div><div class="ni-label">Outstation Network</div><div class="ni-val">Bangalore · Hyderabad · Tirunelveli · Coimbatore</div></div>
+        </div>
+        <div class="net-item">
+          <div class="ni-icon">🤝</div>
+          <div><div class="ni-label">Professional Allies</div><div class="ni-val">CA Firms · Cost Accountants · Company Secretaries</div></div>
+        </div>
+        <div class="net-item">
+          <div class="ni-icon">⚖️</div>
+          <div><div class="ni-label">Legal &amp; Technical</div><div class="ni-val">Lawyers · Engineers · Architects</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding:0;">
+  <div class="contact-top">
+    <div class="contact-top-inner">
+      <div class="reveal">
+        <span class="sec-tag" style="color:rgba(184,146,58,.7);">Get In Touch</span>
+        <h2>Let's <span>Connect</span></h2>
+        <div class="sec-rule"></div>
+        <p class="ct-desc">We welcome enquiries from prospective clients across all business categories. Our team is ready to provide expert guidance tailored to your specific requirements.</p>
+      </div>
+      <div class="contact-details reveal d2">
+        <div class="cd-item">
+          <div class="cd-icon">📍</div>
+          <div><div class="cd-label">Office Address</div><div class="cd-val">Vijay Vishnu Apartments, No.169, F 2,<br>15th Sector, 94th Street, K.K. Nagar,<br>Chennai – 600 078</div></div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-icon">📞</div>
+          <div><div class="cd-label">Phone</div><div class="cd-val"><a href="tel:+914424810081">044 – 2481 0081</a><a href="tel:+919003254592">+91 90032 54592 (Mobile)</a></div></div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-icon">✉️</div>
+          <div><div class="cd-label">Email</div><div class="cd-val"><a href="mailto:govindprabhaca@gmail.com">govindprabhaca@gmail.com</a><a href="mailto:plassociateschennai78@gmail.com">plassociateschennai78@gmail.com</a></div></div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-icon">💬</div>
+          <div><div class="cd-label">WhatsApp</div><div class="cd-val"><a href="https://wa.me/919003254592" target="_blank">+91 90032 54592 — Tap to Chat</a></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form-section">
+    <div class="cfs-inner">
+      <div class="reveal">
+        <div class="form-header">
+          <h3>Quick Connect</h3>
+          <p>Reach us instantly via WhatsApp or email. We respond promptly to all enquiries.</p>
+        </div>
+        <a href="https://wa.me/919003254592?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" class="wa-big-btn">
+          <div class="wa-icon">📱</div>
+          <div><strong>Chat on WhatsApp</strong><span>+91 90032 54592 — instant reply</span></div>
+        </a>
+        <a href="mailto:govindprabhaca@gmail.com" class="email-big-btn">
+          <div class="em-icon">✉️</div>
+          <div><strong>Send an Email</strong><span>govindprabhaca@gmail.com</span></div>
+        </a>
+      </div>
+      <div class="reveal d2">
+        <div class="fg"><label>Your Name</label><input type="text" id="fn" placeholder="Full Name"></div>
+        <div class="fg"><label>Email Address</label><input type="email" id="fe" placeholder="your@email.com"></div>
+        <div class="fg">
+          <label>Service Required</label>
+          <select id="fs">
+            <option value="">Select a service…</option>
+            <option>Income Tax Matters</option>
+            <option>Company Law</option>
+            <option>Statutory / Internal Audit</option>
+            <option>Foreign Exchange (FEMA)</option>
+            <option>Accounting Services</option>
+            <option>Systems / Forensic Audit</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message</label><textarea id="fm" rows="4" placeholder="Brief description of your requirement…"></textarea></div>
+        <div class="form-actions">
+          <button class="f-btn-wa" onclick="sendWA()">📱 WhatsApp</button>
+          <button class="f-btn-em" onclick="sendEmail()">✉️ Email</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Institute_of_Chartered_Accountants_of_India_logo.svg/512px-Institute_of_Chartered_Accountants_of_India_logo.svg.png" height="40">
-<p>© 2026 P.L. & Associates</p>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>P.L. & Associates</h3>
+        <span class="fb-role">Chartered Accountants · Chennai</span>
+        <p>Delivering financial excellence with integrity since 1995. Vijay Vishnu Apartments, No.169, F 2, 15th Sector, 94th Street, K.K. Nagar, Chennai – 600 078.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Income Tax Matters</a>
+        <a href="#services">Company Law</a>
+        <a href="#services">Statutory Audit</a>
+        <a href="#services">Foreign Exchange</a>
+        <a href="#services">Accounting Services</a>
+        <a href="#services">Systems Audit</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+914424810081">044 – 2481 0081</a>
+        <a href="tel:+919003254592">+91 90032 54592</a>
+        <a href="mailto:govindprabhaca@gmail.com">govindprabhaca@gmail.com</a>
+        <a href="https://wa.me/919003254592" target="_blank">WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 P.L. & Associates. All Rights Reserved.</p>
+      <div class="icai-badge">🏛 ICAI Registered · Peer Reviewed 2008 &amp; 2013</div>
+      <p>K.K. Nagar, Chennai – 600 078</p>
+    </div>
+  </div>
 </footer>
 
+<div class="float-group">
+  <a class="flt flt-wa" href="https://wa.me/919003254592?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20P.L.%20%26%20Associates." target="_blank" title="WhatsApp">📱</a>
+  <a class="flt flt-em" href="mailto:govindprabhaca@gmail.com" title="Email">✉️</a>
+</div>
+
 <script>
-
-/* ===== REVEAL ===== */
-const obs=new IntersectionObserver(e=>{
-e.forEach(x=>{
-if(x.isIntersecting)x.target.classList.add('in');
-});
-});
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-/* ===== POPUP ===== */
-setTimeout(()=>{
-document.getElementById("popup").style.display="block";
-},5000);
-
-/* ===== WHATSAPP ===== */
-function openWA(){
-gtag('event','conversion',{send_to:'AW-XXXXXXX'});
-window.open("https://wa.me/919003254592");
+function sendWA(){
+  const n=document.getElementById('fn').value.trim();
+  const s=document.getElementById('fs').value;
+  const m=document.getElementById('fm').value.trim();
+  const txt=encodeURIComponent('Hello P.L. & Associates,\n\nName: '+(n||'Not provided')+'\nService: '+(s||'General Enquiry')+'\nMessage: '+(m||'N/A'));
+  window.open('https://wa.me/919003254592?text='+txt,'_blank');
 }
-
-/* ===== FORM ===== */
-function sendLead(){
-gtag('event','conversion',{send_to:'AW-XXXXXXX/form'});
-alert("Submitted!");
+function sendEmail(){
+  const n=document.getElementById('fn').value.trim();
+  const e=document.getElementById('fe').value.trim();
+  const s=document.getElementById('fs').value;
+  const m=document.getElementById('fm').value.trim();
+  const sub=encodeURIComponent('Enquiry: '+(s||'General')+' — '+n);
+  const body=encodeURIComponent('Dear P.L. & Associates,\n\nName: '+n+'\nEmail: '+e+'\nService: '+s+'\n\nMessage:\n'+m+'\n\nRegards,\n'+n);
+  window.location.href='mailto:govindprabhaca@gmail.com?subject='+sub+'&body='+body;
 }
-
 </script>
-
 </body>
 </html>
